@@ -1,0 +1,170 @@
+@import '../../../theme/web/custom-variables';
+
+.widget-gallery .widget-gallery-items.widget-gallery-lg-1 {
+    grid-template-columns: repeat(auto-fill,195px);
+}
+
+.PlanDiv {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    overflow-y: auto;
+    min-width: 200px;
+    max-width: 650px;
+    width: 100%;
+}
+
+.PlanGallery{
+  flex-grow: 1;
+  max-height: 600px;  
+  overflow-y: auto;
+  padding-right: 18px;
+  box-sizing: border-box;
+}
+
+.PlanGallery > .widget-gallery-content{
+    height: 100%;
+}
+
+.PlanGallery > .widget-gallery-content >.widget-gallery-items{
+    height: 100%;
+    overflow-x: hidden;
+    flex-wrap: wrap; 
+}
+
+.PlanGallery > .widget-gallery-content >.widget-gallery-items > .widget-gallery-item{
+    height: 100% !important;
+}
+
+.PlanGallery.widget-gallery:not(.widget-gallery-disable-selected-items-highlight) .widget-gallery-item.widget-gallery-clickable.widget-gallery-selected{
+    background: blue;
+    border: 2px outset rgb(44, 44, 44);
+    border-radius: 5px;    
+}
+
+.SamplePlanTile {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.30);
+    height: 100% !important;
+    width: 195px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    background: #FFF;
+    box-sizing: border-box;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    width: 194px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-top: 8px !important;
+}
+
+.SamplePlanTile.selected {
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: #EEF6F8;
+    box-shadow: 0 1px 6px 0  rgba(0, 0, 0, 0.30);
+}
+
+.InProcessPlan{
+    background: linear-gradient(#f9eeb1, #fcb435);
+}
+
+.PlanPass{
+    background: linear-gradient(#b0e6ae, #6cd671);
+}
+
+.PlanFail{
+    background: linear-gradient(#ee8484, #d14141);
+}
+
+.SampleCntLeft{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.SampleCntRight{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-height: 30px;
+}
+
+.SampleSummary{
+    width: 225px;
+    height: 50px;
+}
+
+.CountText{
+    color:  #1E1E1E;
+
+    /* Desktop/Body 1/600 */
+    font-family: "Segoe UI";
+    font-size: 14.4px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px; /* 131.944% */
+}
+
+.LabelText{
+    color:  #464646;
+
+    /* Desktop/Body 2/400 */
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 133.333% */
+}
+
+.SampleTestName {
+    color: #1E1E1E;
+    font-family: "Segoe UI";
+    font-size: 14.4px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+    width: 140px;             
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 5px;
+    display: block;          
+}
+
+.resourcecardcard-title{
+    display: flex;
+    align-items: center;
+    padding-right: 12px;
+    box-sizing: border-box;
+    margin-top: 8px;
+}
+
+.StatusIndicator{
+    flex: 0 0 22px;         
+    margin-right: 3px;
+    margin-left: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.cgrid-scrollable-div {
+  height: 200px;            
+  overflow-y: auto;        
+}
+
+.instructions-div{
+    margin-bottom: 16px;
+}

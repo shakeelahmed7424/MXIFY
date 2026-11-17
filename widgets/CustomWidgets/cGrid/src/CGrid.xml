@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.cgrid.CGrid" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+	<name>CGrid</name>
+	<description>Dynamic grid that intakes rows and columns</description>
+	<icon/>
+	<properties>
+		<propertyGroup caption="General">
+			<property key="requestBody" type="attribute" required="true">
+				<caption>Request Body</caption>
+				<description>This attribute will store the request body for the CollectDataTxn API</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="selectedRowValue" type="attribute" required="true">
+				<caption>selectedRowValue</caption>
+				<description>This attribute will store the selected row request body for the CollectDataTxn API</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="isSubmitBtnEnabled" type="attribute" required="true">
+				<caption>Submit Button Enabled</caption>
+				<description>This attribute will enable/disable the Submit button</description>
+				<attributeTypes>
+					<attributeType name="Integer"/>
+				</attributeTypes>
+			</property>
+			<property key="isParentDataCollection" type="attribute" required="true">
+				<caption>Parent Data Collection?</caption>
+				<description>This attribute will check for ParentDataCollection</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="dropDownValues" type="datasource" isList="true" required="true">
+				<caption>Data Collection Selection Values</caption>
+				<description>This data source will fetch the list of data collections available on the container</description>
+			</property>
+			<property key="dataCollectionChangeAction" type="action" dataSource="dropDownValues">
+				<caption>On Data Collection Change</caption>
+				<description>Action to be performed when selected data collection is changed</description>
+			</property>
+			<property key="zoomScale" type="attribute" required="false" >
+				<caption>Zoom Scale</caption>
+				<description>This attribute will store the zoom scale value as per zoom percentage required</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="dataCollectionName" type="attribute" required="true" dataSource="dropDownValues">
+				<caption>Data Collection Name</caption>
+				<description>This attribute will store the name of data collection from the drop down values</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="dataCollectionRevision" type="attribute" required="true" dataSource="dropDownValues">
+				<caption>Data Collection Revision</caption>
+				<description>This attribute will store the Revision of data collection from the drop down values</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="dataCollectionUseROR" type="attribute" required="true" dataSource="dropDownValues">
+				<caption>Data Collection isROR</caption>
+				<description>This attribute will store the Revision of Record of data collection from the drop down values</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="dataList" type="datasource" isList="true" required="true">
+				<caption>Data source</caption>
+				<description>This data source will fetch the data points from the selected data collection</description>
+			</property>
+			<property key="containerName" type="attribute" required="true">
+				<caption>Container Name</caption>
+				<description>This attribute will store name of the container</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="serverUrl" type="expression" required="true">
+				<caption>Server URL</caption>
+				<description>This attribute will store the server URL</description>
+				<returnType type="String" />
+			</property>
+			<property key="bearerToken" type="expression" required="true">
+				<caption>Bearer Token</caption>
+				<description>This attribute will store the bearer token</description>
+				<returnType type="String" />
+			</property>
+			
+			<property key="collectDataQrCodeClickAction" type="action" dataSource="dataList">
+				<caption>On Textbox QR Code Image Click</caption>
+				<description>Action to be performed when textbox QR Code Image is clicked</description>
+			</property>
+			<property key="listName" type="attribute" required="true" dataSource="dataList">
+				<caption>Name</caption>
+				<description>This attribute will store the name of the data point</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="selectedDataCollection" type="attribute" dataSource="dataList">
+				<caption>Selected DataCollection</caption>
+				<description>This attribute will store the name of the selected data collection</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="selectedDataCollectionRevision" type="attribute" dataSource="dataList">
+				<caption>Selected DataCollection Revision</caption>
+				<description>This attribute will store the Revision of the selected data collection</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="selectedDataCollectionIsROR" type="attribute" dataSource="dataList">
+				<caption>Selected DataCollection IsROR</caption>
+				<description>This attribute will store the value of isRevisionOfRecord of the selected data collection</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="dataValue" type="attribute" required="true" dataSource="dataList">
+				<caption>Data Value</caption>
+				<description>This attribute will store the Data Value of the data point</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="lowerLimit" type="attribute" required="true" dataSource="dataList">
+				<caption>Lower Limit</caption>
+				<description>This attribute will store the lower limit of the data point</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="persLowerLimit" type="attribute" required="true" dataSource="dataList">
+				<caption>Pers Lower Limit</caption>
+				<description>This attribute will store the pers lower limit of the data point</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="upperLimit" type="attribute" required="true" dataSource="dataList">
+				<caption>Upper Limit</caption>
+				<description>This attribute will store the upper limit of the data point</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="persUpperLimit" type="attribute" required="true" dataSource="dataList">
+				<caption>Pers Upper Limit</caption>
+				<description>This attribute will store the pers upper limit of the data point</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="uom" type="attribute" required="true" dataSource="dataList">
+				<caption>UOM</caption>
+				<description>This attribute will store the UOM of the data point</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="displayLimits" type="attribute" required="true" dataSource="dataList">
+				<caption>Display Limits</caption>
+				<description>This attribute will store the display limits flag for the data point</description>
+				<attributeTypes>
+					<attributeType name="Boolean"/>
+				</attributeTypes>
+			</property>
+			<property key="isLimitOverrideAllowed" type="attribute" required="true" dataSource="dataList">
+				<caption>Is Limit Override Allowed</caption>
+				<description>This attribute will store the limit overrides flag for the data point</description>
+				<attributeTypes>
+					<attributeType name="Boolean"/>
+				</attributeTypes>
+			</property>
+			<property key="isRequired" type="attribute" required="true" dataSource="dataList">
+				<caption>Is Required</caption>
+				<description>This attribute will store the is reqyired flag for the data point</description>
+				<attributeTypes>
+					<attributeType name="Boolean"/>
+				</attributeTypes>
+			</property>
+			<property key="dataType" type="attribute" required="true" dataSource="dataList">
+				<caption>Data Type</caption>
+				<description>This attribute will store the data type of the data point</description>
+				<attributeTypes>
+					<attributeType name="Integer"/>
+				</attributeTypes>
+			</property>
+			<property key="booleanTrue" type="attribute" required="true" dataSource="dataList">
+				<caption>Boolean True Value</caption>
+				<description>This attribute will store the true value for the boolean data point</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="booleanFalse" type="attribute" required="true" dataSource="dataList">
+				<caption>Boolean False Value</caption>
+				<description>This attribute will store the false value for the boolean data point</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="decimalScale" type="attribute" required="true" dataSource="dataList">
+				<caption>Decimal Scale</caption>
+				<description>This attribute will store the decimal scale for the data point</description>
+				<attributeTypes>
+					<attributeType name="Integer"/>
+				</attributeTypes>
+			</property>
+			<property key="displayMode" type="attribute" required="true" dataSource="dataList">
+				<caption>Display Mode</caption>
+				<description>This attribute will store the display mode for the data point</description>
+				<attributeTypes>
+					<attributeType name="Integer"/>
+				</attributeTypes>
+			</property>
+			<property key="CDOBaseType" type="attribute" dataSource="dataList">
+				<caption>CDO Base Type</caption>
+				<description>This attribute will store the CDO base type for the data point</description>
+				<attributeTypes>
+					<attributeType name="Integer"/>
+				</attributeTypes>
+			</property>
+			<property key="CDOName" type="attribute" dataSource="dataList">
+				<caption>CDO Name</caption>
+				<description>This attribute will store the CDO name for the data point</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="rowPosition" type="attribute" dataSource="dataList">
+				<caption>Row Position</caption>
+				<description>This attribute will store the row position of the data point</description>
+				<attributeTypes>
+					<attributeType name="Integer"/>
+				</attributeTypes>
+			</property>
+			<property key="columnPosition" type="attribute" dataSource="dataList">
+				<caption>Column Position</caption>
+				<description>This attribute will store the column position of the data point</description>
+				<attributeTypes>
+					<attributeType name="Integer"/>
+				</attributeTypes>
+			</property>
+			<property key="dataPointLayout" type="attribute" required="true">
+				<caption>Data Point Layout</caption>
+				<description>This attribute will store the layout type of data collection def</description>
+				<attributeTypes>
+					<attributeType name="Integer"/>
+				</attributeTypes>
+			</property>
+		</propertyGroup>
+	</properties>
+</widget>

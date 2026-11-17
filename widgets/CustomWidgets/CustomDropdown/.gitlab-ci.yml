@@ -1,0 +1,27 @@
+image: registry.rnd.mendix.com/platformcore/mirrored-customdropdown/node-canvas
+
+stages:
+    - snyk_scan
+    - install
+    - test
+
+snyk:
+  stage: snyk_scan
+  variables:
+    SNYK_TOKEN: $SNYK_TOKEN
+  image: nexus-docker-group.rnd.mendix.com/pipelinecomponents/snyk:latest
+  script:
+    - snyk test --severity-threshold=medium --severity-threshold=high
+    - snyk monitor
+
+install:
+    stage: install
+    script:
+        - npm install
+    artifacts:
+        paths:
+            - node_modules/
+
+test:
+  stage: test
+  script: npm run test:unit

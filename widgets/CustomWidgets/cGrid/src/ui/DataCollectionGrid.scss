@@ -1,0 +1,942 @@
+@import "./Variables.scss";
+
+.data-collection-widget-rowColumn {
+    width: 100%;
+    margin-bottom: 16px;
+    //border: 1px solid $default-border-color;
+    //border-radius: 3px !important;
+    box-shadow: none !important;
+    height: calc(100% - 95px);
+    margin-top: 16px !important;
+
+    &.single-data-collection {
+        height: calc(100% - 16px);
+        margin-top: 0 !important;
+    }
+
+    #contextual-command-bar {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        box-shadow: 0px 1px 2px #0000004d;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        padding: 3px 0;
+        flex-wrap: wrap;
+
+        .rows-to-add-text {
+            font: normal normal 600 10px/14px Segoe UI;
+            letter-spacing: 0px;
+            color: #464646;
+            margin: 0 4px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+        }
+
+        .textinput_new {
+            width: 100%;
+
+            input {
+                border: 1px solid $black-color;
+                padding: 8px;
+                height: 32px;
+                box-sizing: border-box;
+                border-radius: 0px;
+                text-align: center;
+
+                &:enabled:hover,
+                &:enabled:focus,
+                &:enabled:active {
+                    box-shadow: unset;
+                }
+            }
+
+            fieldset {
+                display: none;
+            }
+        }
+    }
+
+    .grid-container-rowColumn {
+        height: calc(100% - 40px);
+        width: 100%;
+        overflow: visible !important;
+
+        &::-webkit-scrollbar {
+            width: 16px;
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            width: 10px;
+            border: 3px solid rgba(0, 0, 0, 0);
+            background-clip: padding-box;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        &::-webkit-scrollbar-thumb:hover,
+        &::-webkit-scrollbar-thumb:active {
+            opacity: 0.5;
+        }
+
+        &::-webkit-scrollbar-button:single-button {
+            height: 16px;
+            width: 16px;
+        }
+
+        .grid-rowColumn {
+            .grid-header {
+                .grid-header-row {
+                    .grid-header-cell {
+                        width: 10%;
+                        background: #e6e6e6 0% 0% no-repeat padding-box;
+                        height: 24px;
+                        text-align: left;
+                        font: normal normal 600;
+                        font-size: $default-font-size;
+                        line-height: $default-line-height;
+                        font-family: $default-font-name;
+                        letter-spacing: 0px;
+                        color: $grid-header-font-color;
+                        border-right: 1px solid $default-border-color;
+                        padding: 4px 8px;
+                        display: grid;
+                    }
+                }
+            }
+
+            .grid-body {
+                .rowColumn {
+                    display: grid;
+                    grid-row-gap: 2ch;
+                    grid-column-gap: 4ch;
+                    white-space: nowrap;
+                }
+
+                .grid-body-row-rowColumn {
+                    th {
+                        padding: 4px 8px;
+                    }
+
+                    td {
+                        padding: 0;
+                    }
+
+                    .grid-body-cell-rowColumn {
+                        // font: normal normal normal;
+                        // font-size: $default-font-size;
+                        // font-family: $default-font-name;
+                        // letter-spacing: 0px;
+                        // color: $grid-cell-font-color;
+                        font: normal normal 600 12px Segoe UI !important;
+                        letter-spacing: 0px;
+                        color: #1e1e1e;
+                        position: relative;
+                        align-self: baseline;
+                        width: 300px !important;
+                       
+                        .grid-body-cell-upperlimit-rowColumn{
+                            float: right;
+                            margin-top: -13px;
+                            font-size : 8px;
+                            font-weight : 700;
+                            word-wrap: break-word;
+                            max-width: 92px;
+                            white-space: normal;
+                        }
+
+                        .grid-body-cell-dataPointName-rowColumn{                            
+                             max-width: 190px;
+                             word-wrap: break-word;
+                             white-space: normal;
+                        }
+
+                        .grid-body-cell-lowerlimit-rowColumn{
+                            float: right;
+                            font-size : 8px;
+                            font-weight : 700;
+                            word-wrap: break-word;
+                            max-width: 92px;
+                            white-space: normal;
+                        }
+
+                        .grid-body-cell-textinput-rowColumn {
+                            width: 300px;
+                            height: 32px;
+
+                            .MuiInputBase-root {
+                                padding-right: 0px;
+                            }
+
+                            input {
+                                background: transparent 0% 0% no-repeat padding-box;
+                                border: none;
+                                border-radius: 2px;
+                                padding: 8px;
+                                //margin: 2px;
+                                height: unset;
+                                //box-shadow: inset 0 0 0 1px #828282;
+                                border: 1px solid #828282 !important;
+
+                                &:enabled:hover {
+                                    box-shadow: inset 0 0 0 2px $text-input-hover-color;
+                                }
+
+                                &:enabled:focus,
+                                &:enabled:active {
+                                    background: #ffffff 0% 0% no-repeat padding-box;
+                                    box-shadow: inset 0 0 0 2px $text-input-focus-color;
+                                }
+                            }
+                            fieldset {
+                                display: none;
+                            }
+                        }
+
+                        .DataCollectionGrid-PicklistControl-rowColumn {
+                            width: 300px;
+                            height: 32px;
+                        }
+
+                        .grid-body-cell-Treeselect-rowColumn {
+                            width: 300px;
+                            height: 32px;
+                            font: normal normal normal 12px / 16px Segoe UI !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.grid-cell-icon-rowColumn {
+    width: 20px !important;
+    position: absolute;
+    right: 8px;
+    top: 7px;
+    height: 19px !important;
+    z-index: 2 !important;
+
+    &_error-rowColumn {
+        fill: $error-color !important;
+        position: relative !important;
+        margin-left: 10px !important;
+    }
+
+    &_success-rowColumn {
+        fill: $success-color !important;
+        position: relative !important;
+        margin-left: 10px !important;
+    }
+
+    &_warning-rowColumn {
+        fill: $warning-color !important;
+        position: relative !important;
+        margin-left: 10px !important;
+    }
+}
+
+.required {
+    font-size: 18px;
+    display: inline-block;
+    color: #005f87;
+    transform: translateY(4px);
+}
+
+.MuiSelect-select {
+    background: transparent 0% 0% no-repeat padding-box;
+    //border: none !important;
+    border-radius: 2px !important;
+    padding: 8px;
+    //margin-bottom: -2px !important;
+    margin: 2px;
+    height: unset;
+    //box-shadow: inset 0 0 0 1px #828282 !important;
+    padding: 8px !important;
+    font: normal normal normal 12px/16px Segoe UI !important;
+    border: 1px solid #828282 !important;
+
+    &:hover {
+        box-shadow: inset 0 0 0 2px $text-input-hover-color !important;
+    }
+     &:focus {
+        box-shadow: inset 0 0 0 2px $text-input-focus-color !important;
+    }
+    &:active {
+        box-shadow: inset 0 0 0 2px $text-input-focus-color !important;
+    }
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border-color: transparent !important;
+}
+
+.grid-body-cell-select-rowColumn {
+    width: 300px;
+    font: normal normal normal 12px/16px Segoe UI !important;
+
+    .MuiSelect-select {
+        box-sizing: border-box;
+        height: 32px !important;
+    }
+
+    & fieldset {
+        display: none;
+    }
+}
+
+.Mui-focused {
+    .MuiSelect-select {
+        background: #ffffff 0% 0% no-repeat padding-box !important;
+        box-shadow: inset 0 0 0 2px $text-input-focus-color !important;
+    }
+}
+
+.MuiList-padding {
+    padding: 0px !important;
+}
+
+.menu-item {
+    padding: 8px !important;
+    display: block !important;
+    font: normal normal normal 12px/16px Segoe UI !important;
+
+    &:hover,
+    &:active {
+        background-color: $menu-item-hover-color !important;
+    }
+
+    .MuiTouchRipple-root {
+        display: none;
+    }
+}
+
+.MuiMenu-paper {
+    border: 1px solid $default-border-color !important;
+    box-shadow: 0px 3px 6px #0000004d !important;
+    border-radius: 3px !important;
+    background: #fff !important;
+    transform: scale(var(--mui-scale, 1)) !important;
+    height: 250px;
+    transform-origin: top center;
+}
+
+.ant-select-tree-node-content-wrapper{
+    font: normal normal normal var(--font-size) Segoe UI !important;
+    display: inline-block;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.MuiTooltip-tooltip{
+    background-color: white !important;
+    border-radius: 0px !important;
+    color: #2b2a2ae0 !important;
+    font: normal normal normal var(--font-size) Segoe UI !important;
+    height: 32px !important;
+    align-items: center !important;
+    display: flex !important;
+    border-top: 1px solid !important;
+    border-left: 1px solid !important;
+    border-right: 1px solid #828282  !important;
+    border-bottom: 1px solid #828282  !important;
+}
+
+
+.Mui-selected {
+    background: #fff !important;
+}
+
+@mixin change-input-text-css($bg-color, $primary-color) {
+    box-shadow: inset 0 0 0 1px $primary-color !important;
+    background: $bg-color !important;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: transparent !important;
+        box-shadow: inset 0 0 0 2px $primary-color !important;
+    }
+}
+
+.decimal_scale_error input,
+.invalid_text input,
+.invalid_text .MuiSelect-select,
+.Mui-focused.invalid_text.grid-body-cell-select-rowColumn .MuiSelect-select {
+    @include change-input-text-css(#fce5e5, $error-color);
+}
+
+.warning_text input,
+.warning_text .MuiSelect-select,
+.Mui-focused.warning_text.grid-body-cell-select-rowColumn .MuiSelect-select {
+    @include change-input-text-css(#fcf0e7, $warning-color);
+}
+
+.MuiSelect-iconOpen {
+    transform: none !important;
+}
+
+.error-message {
+    position: absolute;
+    background: #fce5e5;
+    padding: 4px;
+    box-shadow: inset 0 0 0 1px $error-color !important;
+    width: calc(100% - 27px);
+    z-index: 100;
+
+    span {
+        font-weight: 600;
+        color: $error-color;
+    }
+}
+
+.dataCollectionDef-SelectControl-label {
+    font: normal normal 600 12px/16px Segoe UI !important;
+    letter-spacing: 0px;
+    color: #1e1e1e;
+    opacity: 1;
+    margin-bottom: 4px !important;
+}
+
+.dataCollectionDef-FormControl {
+    margin: 0px;
+    width: 300px;
+    margin-top: 0px;
+    height: 32px;
+}
+
+.data-collection-widget {
+    width: 100%;
+    margin-bottom: 16px;
+    // border: 1px solid $default-border-color;
+    // border-radius: 3px !important;
+    box-shadow: none !important;
+    height: calc(100% - 95px);
+    margin-top: 16px !important;
+
+    &.single-data-collection {
+        height: calc(100% - 16px);
+        margin-top: 0 !important;
+    }
+
+    #contextual-command-bar {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        //box-shadow: 0px 1px 2px #0000004d;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        padding: 3px 0;
+        flex-wrap: wrap;
+
+        .rows-to-add-text {
+            font: normal normal 600 10px/14px Segoe UI;
+            letter-spacing: 0px;
+            color: #464646;
+            margin: 0 4px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+        }
+
+        .textinput_new {
+            width: 100%;
+
+            input {
+                border: 1px solid $black-color;
+                padding: 8px;
+                height: 32px;
+                box-sizing: border-box;
+                border-radius: 0px;
+                text-align: center;
+
+                &:enabled:hover,
+                &:enabled:focus,
+                &:enabled:active {
+                    box-shadow: unset;
+                }
+            }
+
+            fieldset {
+                display: none;
+            }
+        }
+    }
+
+    .grid-container {
+    //         max-height: 20vh;
+    // min-height: calc(20vh - 60px);
+    // width: 100%;
+    // overflow: auto;
+    // border: 1px solid #dcdcdc;
+    // height: calc(100% - 40px);
+    // border-radius: 3px !important;
+
+        height: var(--grid-height);
+        max-height: var(--grid-max-height);
+        min-height: var(--grid-min-height);
+        // max-height: 20vh;
+        // min-height: calc(20vh - 60px);
+        width: 100%;
+        overflow: auto;
+        border: 1px solid $default-border-color;
+        border-radius: 3px !important;
+
+        &::-webkit-scrollbar {
+            width: 13px;
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            width: 10px;
+            border: 3px solid rgba(0, 0, 0, 0);
+            background-clip: padding-box;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        &::-webkit-scrollbar-thumb:hover,
+        &::-webkit-scrollbar-thumb:active {
+            opacity: 0.5;
+        }
+
+        &::-webkit-scrollbar-button:single-button {
+            height: 16px;
+            width: 16px;
+        }
+
+        .grid {
+            .grid-header {
+                .grid-header-row {
+                    .grid-header-cell {
+                        width: 10%;
+                        background: #e6e6e6 0% 0% no-repeat padding-box;
+                        height: 24px;
+                        text-align: left;
+                        font: normal normal 600;
+                        font-size: $default-font-size;
+                        line-height: $default-line-height;
+                        font-family: $default-font-name;
+                        letter-spacing: 0px;
+                        color: $grid-header-font-color;
+                        border-bottom: 1px solid $default-border-color;
+                        border-right: 1px solid $default-border-color;
+                        padding: 4px 8px;
+                    }
+                }
+            }
+
+            .grid-body {
+                .grid-body-row {
+                    th {
+                        padding: 4px 8px;
+                    }
+
+                    td {
+                        padding: 0;
+                    }
+
+                    .grid-body-cell {
+                        font: normal normal normal;
+                        font-size: $default-font-size;
+                        line-height: $default-line-height;
+                        font-family: $default-font-name;
+                        letter-spacing: 0px;
+                        color: $grid-cell-font-color;
+                        border-bottom: 1px solid $default-border-color;
+                        position: relative;
+
+                        &.minWidth {
+                            min-width: 120px;
+                        }
+
+                        &.dateTimeMinWidth {
+                            min-width: 180px;
+                        }
+
+                        .grid-body-cell-textinput {
+                            width: calc(100% - 27px);
+
+                            .MuiInputBase-root {
+                                padding-right: 0px;
+                            }
+
+                            input {
+                                background: transparent 0% 0% no-repeat padding-box;
+                                border: none;
+                                border-radius: 2px;
+                                padding: 8px;
+                                margin: 2px;
+                                height: unset;
+                                box-shadow: inset 0 0 0 1px #828282;
+
+                                &:enabled:hover {
+                                    box-shadow: inset 0 0 0 2px $text-input-hover-color;
+                                }
+
+                                &:enabled:focus,
+                                &:enabled:active {
+                                    background: #ffffff 0% 0% no-repeat padding-box;
+                                    box-shadow: inset 0 0 0 2px $text-input-focus-color;
+                                }
+                            }
+
+                            fieldset {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        background: $grid-row-hover-color 0% 0% no-repeat padding-box;
+                    }
+
+                    &.selected-row {
+                        background: $grid-row-selected-color 0% 0% no-repeat padding-box;
+
+                        &:hover,
+                        &:enabled:focus,
+                        &:enabled:active {
+                            background: #bedfe6 0% 0% no-repeat padding-box;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.grid-cell-icon {
+    width: 20px !important;
+    position: absolute;
+    height: 19px !important;
+    z-index: 2 !important;
+    top:8px;
+
+    &_error {
+        fill: $error-color !important;
+    }
+
+    &_success {
+        fill: $success-color !important;
+    }
+
+    &_warning {
+        fill: $warning-color !important;
+    }
+}
+
+.required {
+    font-size: 18px;
+    display: inline-block;
+    color: #005f87;
+    transform: translateY(4px);
+}
+
+.MuiSelect-select {
+    background: transparent 0% 0% no-repeat padding-box;
+    //border: none !important;
+    border-radius: 2px !important;
+    padding: 8px;
+    margin: 2px;
+    height: unset;
+    //box-shadow: inset 0 0 0 1px #828282 !important;
+    border: 1px solid #828282 !important;
+    padding: 8px !important;
+    font: normal normal normal 12px/16px Segoe UI !important;
+
+    &:hover {
+        box-shadow: inset 0 0 0 2px $text-input-hover-color !important;
+    }
+    &:focus {
+        box-shadow: inset 0 0 0 2px $text-input-focus-color !important;
+    }
+    &:active {
+        box-shadow: inset 0 0 0 2px $text-input-focus-color !important;
+    }
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border-color: transparent !important;
+}
+
+.grid-body-cell-select {
+    width: calc(100% - 31px);
+    font: normal normal normal 12px/16px Segoe UI !important;
+
+    .MuiSelect-select {
+        box-sizing: border-box;
+        height: 32px !important;
+        padding-right: 24px !important;
+    }
+
+    & fieldset {
+        display: none;
+    }
+}
+
+.Mui-focused {
+    .MuiSelect-select {
+        background: #ffffff 0% 0% no-repeat padding-box !important;
+        box-shadow: inset 0 0 0 2px $text-input-focus-color !important;
+    }
+}
+
+.MuiList-padding {
+    padding: 0px !important;
+}
+
+.menu-item {
+    padding: 8px !important;
+    display: block !important;
+    font: normal normal normal 12px/16px Segoe UI !important;
+
+    &:hover,
+    &:active {
+        background-color: $menu-item-hover-color !important;
+    }
+
+    .MuiTouchRipple-root {
+        display: none;
+    }
+}
+
+.MuiMenu-paper {
+    border: 1px solid $default-border-color !important;
+    box-shadow: 0px 3px 6px #0000004d !important;
+    border-radius: 3px !important;
+    background: #fff !important;
+    transform: scale(var(--mui-scale, 1)) !important;
+    height: 250px;
+    transform-origin: top center;
+}
+
+.ant-select-tree-node-content-wrapper{
+     font: normal normal normal var(--font-size) Segoe UI !important;
+     display: inline-block;
+     text-overflow:ellipsis;
+     white-space: nowrap;
+     overflow: hidden;     
+}
+
+.MuiTooltip-tooltip{
+    background-color: white !important;
+    border-radius: 0px !important;
+    color: #2b2a2ae0 !important;
+    font: normal normal normal var(--font-size) Segoe UI !important;
+    height: 32px !important;
+    align-items: center !important;
+    display: flex !important;
+    border-top: 1px solid !important;
+    border-left: 1px solid !important;
+    border-right: 1px solid #828282  !important;
+    border-bottom: 1px solid #828282  !important;
+}
+
+.Mui-selected {
+    background: #fff !important;
+}
+
+@mixin change-input-text-css($bg-color, $primary-color) {
+    box-shadow: inset 0 0 0 1px $primary-color !important;
+    background: $bg-color !important;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: transparent !important;
+        box-shadow: inset 0 0 0 2px $primary-color !important;
+    }
+}
+
+.decimal_scale_error input,
+.invalid_text input,
+.invalid_text .MuiSelect-select,
+.Mui-focused.invalid_text.grid-body-cell-select .MuiSelect-select {
+    @include change-input-text-css(#fce5e5, $error-color);
+}
+
+.warning_text input,
+.warning_text .MuiSelect-select,
+.Mui-focused.warning_text.grid-body-cell-select .MuiSelect-select {
+    @include change-input-text-css(#fcf0e7, $warning-color);
+}
+
+.MuiSelect-iconOpen {
+    transform: none !important;
+}
+
+.error-message-rowColumn {
+    position: absolute;
+    background: #fce5e5;
+    padding: 4px;
+    box-shadow: inset 0 0 0 1px $error-color !important;
+    width: calc(100% - 100px);
+    z-index: 100;
+
+    span {
+        font-weight: 600;
+        color: $error-color;
+    }
+}
+
+.dataCollectionDef-SelectControl-label {
+    font: normal normal 600 12px/16px Segoe UI !important;
+    letter-spacing: 0px;
+    color: #1e1e1e;
+    opacity: 1;
+    margin-bottom: 4px !important;
+}
+
+.dataCollectionDef-FormControl {
+    margin: 0px;
+    width: 300px;
+    margin-top: 0px;
+    height: 32px;
+    font: normal normal normal 12px / 16px Segoe UI !important;
+}
+.grid-body-cell-Treeselect {
+    width: calc(100% - 31px) !important;
+    font: normal normal normal 12px / 16px Segoe UI !important;
+}
+.grid-body-cell-Treeselect .ant-select-selector {
+    border: none !important;
+    border-radius: 2px !important;
+    font: normal normal normal 12px / 16px Segoe UI !important;
+    box-shadow: inset 0 0 0 1px #828282 !important;
+}
+.grid-body-cell-Treeselect-rowColumn .ant-select-selector {
+    border: none !important;
+    border-radius: 2px !important;
+    font: normal normal normal 12px / 16px Segoe UI !important;
+    box-shadow: inset 0 0 0 1px #828282 !important;
+}
+
+.dataCollectionDef-FormControl .ant-select-selector {
+    border: none !important;
+    border-radius: 2px !important;
+    font: normal normal normal 12px / 16px Segoe UI !important;
+    box-shadow: inset 0 0 0 1px #828282 !important;
+}
+
+.ant-select-tree .ant-select-tree-node-content-wrapper:hover,
+.ant-select-tree .ant-select-tree-node-content-wrapper :focus,
+.ant-select-tree .ant-select-tree-node-content-wrapper :active {
+    background-color: $menu-item-hover-color !important;
+}
+
+// .ant-select-tree .ant-select-tree-node-content-wrapper-selected {
+//     background-color: $menu-item-hover-color !important;
+// }
+
+.dataCollectionDef-SelectControl .dataCollectionDef-FormControl .ant-select-selector:hover {
+    box-shadow: inset 0 0 0 2px #828282 !important;
+}
+.dataCollectionDef-SelectControl .dataCollectionDef-FormControl .ant-select-selector:focus-within {
+    box-shadow: inset 0 0 0 2px #0F789B !important;
+}
+.dataCollectionDef-SelectControl .dataCollectionDef-FormControl .ant-select-selector:active {
+    box-shadow: inset 0 0 0 2px #0F789B !important;
+}
+.dataCollectionDef-SelectControl .dataCollectionDef-FormControl .ant-select-selector:focus {
+    box-shadow: inset 0 0 0 2px #0F789B !important;
+}
+.Picklist-element {
+    display: inline-block;
+    width: 16px;
+}
+.ant-select-tree-indent{
+    display: none !important;
+}
+.DataCollectionGrid-PicklistControl .grid-body-cell-Treeselect .ant-select-selector:hover {
+    box-shadow: inset 0 0 0 2px #828282 !important;
+}
+.DataCollectionGrid-PicklistControl .grid-body-cell-Treeselect .ant-select-selector:active {
+    box-shadow: inset 0 0 0 2px #0F789B !important;
+}
+.DataCollectionGrid-PicklistControl .grid-body-cell-Treeselect .ant-select-selector:focus {
+    box-shadow: inset 0 0 0 2px #0F789B !important;
+}
+.DataCollectionGrid-PicklistControl .grid-body-cell-Treeselect .ant-select-selector:focus-within{
+    box-shadow: inset 0 0 0 2px #0F789B !important;
+}
+.DataCollectionGrid-PicklistControl-rowColumn .grid-body-cell-Treeselect-rowColumn .ant-select-selector:hover {
+    box-shadow: inset 0 0 0 2px #828282 !important;
+}
+.DataCollectionGrid-PicklistControl-rowColumn .grid-body-cell-Treeselect-rowColumn .ant-select-selector:active {
+    box-shadow: inset 0 0 0 2px #0F789B !important;
+}
+.DataCollectionGrid-PicklistControl-rowColumn .grid-body-cell-Treeselect-rowColumn .ant-select-selector:focus {
+    box-shadow: inset 0 0 0 2px #0F789B !important;
+}
+.DataCollectionGrid-PicklistControl-rowColumn .grid-body-cell-Treeselect-rowColumn .ant-select-selector:focus-within{
+    box-shadow: inset 0 0 0 2px #0F789B !important;
+}
+.ant-select-tree-node-selected{
+    background-color: $menu-item-hover-color !important;
+}
+.picklist-ArrowDropDownIcon{
+    color: #464646;
+    margin-right: -4px !important;
+    
+}
+.Picklist-Checkicon{
+    font-size: medium !important;
+    margin-bottom: -4px !important;
+}
+.opcore-qr-image {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 6px;
+    top: 6px;
+    cursor: pointer;
+}
+.pull-down-QR_RowColumn {
+    top: 4px !important;
+    right: 5px !important;
+}
+.top5 {
+    top: 5px !important;
+}
+.top20 {
+    top: 20px !important;
+}
+.top30 {
+    top: 30px !important;
+}
+.right30 {
+    right: 30px !important;
+}
+.right60 {
+    right: 60px !important;
+}
+
+.css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root {
+    padding-left: 0 !important;
+}
+.css-1laqsz7-MuiInputAdornment-root{
+    margin-left: 0 !important;
+}

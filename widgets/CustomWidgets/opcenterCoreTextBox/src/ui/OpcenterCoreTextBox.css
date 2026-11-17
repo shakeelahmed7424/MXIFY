@@ -1,0 +1,41 @@
+.widget-scannertextbox-clickable {
+    cursor: pointer;
+}
+
+.widget-scannertextbox {
+    display: inline-block;
+}
+
+.widget-scannertextbox.badge:empty {
+    display: initial;
+    /* Fix padding to stay round */
+    padding: 3px 10px;
+}
+
+.widget-scannertextbox.label:empty {
+    display: initial;
+    /* Fix padding to stay square */
+    padding: .2em .8em .3em;
+}
+
+.widget-scannertextbox.badge {
+    min-width: 18px;
+    min-height: 18px;
+}
+
+.widget-opcoretextbox-padding-right{
+    padding-right: 28px !important;
+}
+
+.widget-opcoretextbox-holder {
+    position: relative;
+}
+
+.widget-opcoretextbox-holder img.opcore-qr-image {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 4px;
+    top: 4px;
+    cursor: pointer;
+}

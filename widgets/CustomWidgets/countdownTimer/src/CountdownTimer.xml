@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.countdowntimer.CountdownTimer" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Countdown Timer</name>
+    <description>My widget description</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <property key="timeDuration" type="expression">
+                <caption>Duration</caption>
+                <description>Duration in Seconds</description>
+                <returnType type="Decimal" />
+            </property>
+
+            <property key="currentValue" type="attribute">
+        	    <caption>Current Value</caption>
+        	    <description>The current value of the timer will be written to this attribute as the timer ticks down</description>
+        	    <attributeTypes>
+        		<attributeType name="Decimal"/>
+        	    </attributeTypes>
+            </property>
+            <property key="currentDateTime" type="attribute">
+        	    <caption>Current DateTime</caption>
+        	    <description>Current DateTime of the timer </description>
+        	    <attributeTypes>
+        		<attributeType name="DateTime"/>
+        	    </attributeTypes>
+            </property>
+
+            <property key="startTime" type="expression">
+        	    <caption>start time</caption>
+        	    <description>start Time</description>
+                <returnType type="Decimal" />
+            </property>
+
+        </propertyGroup>
+        <propertyGroup caption="Events">
+            <propertyGroup caption="Events">
+                <property key="onPauseClickAction" type="action" required="false">
+                    <caption>On pause click action</caption>
+                    <description>Action to trigger when pause button is clicked</description>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+    </properties>
+</widget>

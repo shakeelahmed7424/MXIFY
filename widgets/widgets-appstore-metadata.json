@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0",
+  "widgets": [
+    {
+      "sha-256": "fd162fb2e390b55da721f6b52e6485a691c6df2b8082d62fb9d72809a3d4a610",
+      "name": "Carousel",
+      "version": "2.2.1",
+      "appStoreVersionGuid": "c109a97c-4089-4365-a1bb-fada086fdc7d"
+    },
+    {
+      "sha-256": "31877cfc20669c61bee3167c2b31477c5c76f92d2d176ed77346a22bf2581b4a",
+      "name": "Charts",
+      "version": "6.2.1",
+      "appStoreVersionGuid": "0380271d-a2a0-4236-9640-e75c0e60fe55"
+    },
+    {
+      "sha-256": "8fb6c2938f3de9ab551851c0f5ea590dbba87c8861f25d236689f483b817c842",
+      "name": "Barcode Scanner",
+      "version": "2.3.1",
+      "appStoreVersionGuid": "d0b1f731-11f3-42b0-88c0-91a2dfa8ea85"
+    },
+    {
+      "sha-256": "692ff1b934a2d25861783379a4b01b934a7dafc63aa002274a5ce0308a05e20d",
+      "name": "Events",
+      "version": "1.0.1",
+      "appStoreVersionGuid": "306b70ac-8acd-41c8-a493-91b93f667111"
+    },
+    {
+      "sha-256": "2820c8d662f25777c36ee328954969fd66081b55ba0749af6a2b50555ea66568",
+      "name": "HTMLElement",
+      "version": "1.2.2",
+      "appStoreVersionGuid": "2b09957b-642f-4691-9d4e-64158fa3969d"
+    },
+    {
+      "sha-256": "68344f56b25d45f9b8db15ea5f1de6fa74323c0011df11e3f27cec10ab5226d2",
+      "name": "Image",
+      "version": "1.4.3",
+      "appStoreVersionGuid": "1321ab1b-0826-4ebc-b041-bc5053b3d3f0"
+    },
+    {
+      "sha-256": "4fd4baef7c04c312034907493540d00a613b59985ec82189a1623faf3b371827",
+      "name": "Tooltip",
+      "version": "1.3.2",
+      "appStoreVersionGuid": "c95b5995-60e0-4f6f-9304-2af1718cbac3"
+    },
+    {
+      "sha-256": "a9880a468c36c128d0fab2196a29761f3df8009ae2424acbc36b76dc5f559b49",
+      "name": "HTMLSnippet",
+      "version": "3.9.7",
+      "appStoreVersionGuid": "86652098-de01-4006-8186-196b430ba58c"
+    },
+    {
+      "sha-256": "3f77b6b333036ff0073f1c909cc8fb0e3ad982a3b3ebb47d391a38e53c62c3b5",
+      "name": "SplitPaneWidget",
+      "version": "1.3.0",
+      "appStoreVersionGuid": "3d04c3a4-3a17-4919-85e4-35c251028209"
+    },
+    {
+      "sha-256": "722d2053f6a0b12852a49cc4cab8b5b851b764729f90ddd68f109b2b0e4033c4",
+      "name": "HTML/ JavaScript Snippet",
+      "version": "4.0.0",
+      "appStoreVersionGuid": "5522b2ea-f638-4f29-a229-abc12b7a7323"
+    }
+  ]
+}

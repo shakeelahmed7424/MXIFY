@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="siemens.carouselwidget.CarouselWidget" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+	xmlns="http://www.mendix.com/widget/1.0/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+	<name>Carousel Widget</name>
+	<description>This widget will provide Carousel functionality to display images</description>
+	<icon/>
+	<properties>
+		<propertyGroup caption="General">
+			<property key="documentList" type="datasource" isList="true" required="true">
+				<caption>Data source</caption>
+				<description />
+			</property>
+			<property key="instanceId" type="attribute" required="true" dataSource="documentList">
+				<caption>Instance Id</caption>
+				<description>This attribute will store the Instance Id for the document</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="displayName" type="attribute" required="true" dataSource="documentList">
+				<caption>Display name</caption>
+				<description>This attribute will store the display name for the document</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="documentIcon" type="attribute" required="true" dataSource="documentList">
+				<caption>Document Icon </caption>
+				<description>This attribute will store the Document Icon for the document</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+			<property key="selectedDocumentId" type="expression" required="false" defaultValue="-1">
+				<caption>Selected Document Id</caption>
+				<description>This expression will determine the selected document id for the carousel</description>
+				<returnType type="String"/>
+			</property>
+			<property key="thumbnailClickAction" type="action" dataSource="documentList">
+				<caption>On Thumbnail Click</caption>
+				<description>Action to be performed when a thumbnail is clicked</description>
+			</property>
+		</propertyGroup>
+	</properties>
+</widget>

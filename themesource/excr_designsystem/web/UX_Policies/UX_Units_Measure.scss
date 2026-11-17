@@ -1,0 +1,19 @@
+/*Widget - Container*/
+/*UX Policies class - Required apply into widgets class manually*/
+.ux-units-measure{
+    label + span{
+        margin-left: 4px;
+    }
+
+    span + span{
+        margin-left: 4px;
+
+        font-family: 'Segoe UI' !important;
+        font-style: italic !important;
+        font-weight: 400 !important;
+        font-size: 12px !important;
+        line-height: 16px !important;
+
+        color: #1E1E1E !important;
+    }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "customdropdown",
+  "widgetName": "CustomDropdown",
+  "version": "2.5.0",
+  "description": "Widget to make a selection in a dropdown menu.",
+  "copyright": "2021 Mendix Technology BV",
+  "author": "Nick Jansen",
+  "config": {
+    "projectPath": "./tests/testProject/",
+    "mendixHost": "http://localhost:8080",
+    "developmentPort": "3000"
+  },
+  "packagePath": "mendix",
+  "type": "module",
+  "scripts": {
+    "start": "pluggable-widgets-tools start:server --open",
+    "dev": "pluggable-widgets-tools start:web",
+    "build": "pluggable-widgets-tools build:web",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "test": "pluggable-widgets-tools test:unit:web --no-cache --ci && npm run test:e2e",
+    "test:unit": "pluggable-widgets-tools test:unit:web --coverage",
+    "test:e2e": "pluggable-widgets-tools test:e2e --url \"https://badge.mxapps.io\"",
+    "test:e2e:dev": "pluggable-widgets-tools test:e2e --debug",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:web"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.26.0",
+    "@mendix/pluggable-widgets-tools": "^9.24.1",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@testing-library/jest-dom": "5.9.0",
+    "@testing-library/react": "11.2.5",
+    "@testing-library/react-hooks": "3.2.1",
+    "@types/big.js": "^4.0.5",
+    "@types/classnames": "^2.2.4",
+    "@types/enzyme": "^3.1.10",
+    "@types/jasmine": "^3.4.0",
+    "@types/jest": "^29.0.0",
+    "@types/react-select": "^4.0.13",
+    "@types/react-test-renderer": "18.0.0",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "debounce-promise": "^3.1.2",
+    "react-select": "^5.10.0",
+    "react-select-async-paginate": "^0.7.9"
+  },
+  "overrides": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.70.7",
+    "@types/react": "18.0.0",
+    "@types/react-dom": "18.0.0",
+    "@types/react-native": "0.70.0"
+  },
+  "resolutions": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.70.7",
+    "@types/react": "18.0.0",
+    "@types/react-dom": "18.0.0",
+    "@types/react-native": "0.70.0"
+  }
+}

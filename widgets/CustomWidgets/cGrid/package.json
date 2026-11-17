@@ -1,0 +1,43 @@
+{
+  "name": "cgrid",
+  "widgetName": "CGrid",
+  "version": "1.0.0",
+  "description": "Dynamic grid that intakes rows and columns",
+  "copyright": "© Mendix Technology BV 2022. All rights reserved.",
+  "author": "Millon",
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "Apache-2.0",
+  "config": {
+    "projectPath": "../../",
+    "mendixHost": "http://localhost:8080",
+    "developmentPort": 3000
+  },
+  "packagePath": "mendix",
+  "scripts": {
+    "start": "pluggable-widgets-tools start:server",
+    "clean": "rimraf node_modules",
+    "dev": "pluggable-widgets-tools start:web",
+    "build": "pluggable-widgets-tools build:web",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:web"
+  },
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "^11.3.1"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.3",
+    "@mui/styles": "^5.13.2",
+    "@mui/x-date-pickers": "^6.19.3",
+    "antd": "^5.17.3",
+    "classnames": "^2.2.6",
+    "react-hot-loader": "^4.13.1",
+    "sass": "^1.69.5"
+  }
+}

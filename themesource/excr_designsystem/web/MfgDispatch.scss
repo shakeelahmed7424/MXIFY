@@ -1,0 +1,104 @@
+@import '../../../theme/web/custom-variables';
+   @media screen and (max-height: 900px){
+        .order-dispatch-main{
+             .col-auto{
+             padding-right: unset;
+        }
+          .orderdispatch-field{
+               input{
+                    max-width: 225px!important;
+                    min-width: 225px!important;
+               }
+         
+          
+     }
+     
+        }
+
+        
+     }
+.order-dispatch-main{
+  width: fit-content;
+
+     .no-sampling-selected{
+          justify-content: center;
+          padding-top:15vh !important;
+          label{
+               padding-bottom:14vh //leaving room for the bottom buttons;
+          }
+         
+     }
+   .orderdispatch-submitbtns{
+ 
+         display: flex;
+    height: 100%;
+    align-items:center;
+    margin-bottom: 8px;
+    margin-top:16px;
+
+
+                  
+     
+
+     }
+
+    
+     .ux-fields-bar{
+          padding: unset ;
+     }
+   
+    div.order-dispatch-input .form-control {
+         min-width: 277px;
+    }
+
+	div.order-dispatch-mfg-orders-grid-container > div.mx-name-ContainerHoldGrid {
+		border-bottom: solid rgb(220, 220, 220) 2px;
+		
+		> .widget-datagrid-content {
+			margin-bottom: 0
+		}
+	}
+}
+.selectedRow{
+     .td{
+          background: #DAECF0 0% 0% no-repeat padding-box !important;
+          opacity: 1;
+     }
+}
+
+.noWrapCheck{
+
+     > div[class*=col-]{
+          flex-wrap: nowrap !important;
+          white-space: nowrap !important;
+     }
+}
+
+.btnImg{
+
+     > img {
+          position: relative;
+          bottom: 7px;
+     }
+}
+
+.dataViewMax{
+
+     .mx-dataview-content{
+          height: 100% !important;
+          display: flex !important;
+          flex-direction: column;
+     }
+}
+
+.ux-searchBox{
+
+     .form-control{
+
+      background-image: url('/img/EXCR_DesignSystem$Icon_Repository$cmdSearch16.svg') !important;
+      background-size: 16px 16px !important;
+      background-repeat: no-repeat !important;
+      background-position: 95% 50% !important;
+      background-origin: padding-box !important;
+     }
+}

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.opcentercoretextbox.OpcenterCoreTextBox" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Opcenter Core Text Box</name>
+    <description>My widget description</description>
+    <icon> iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAABp1BMVEUAAABV//9mzP9LtP9Ms/9Jtv9NsvdJsfpLtPpJsfdJsfhJsvhJsvdKsvdJsPhKsPhJsfdJsPhJsfdIsfhJsfdIsPdJsfhJsfhJsPhJsPhIsfhIsPdJsPdKsPdKsfdNsvdOsvdPs/dQs/dRtPdStPdTtPdUtfdWtvdXtvdauPdcuPdeufdeufhguvhiu/hju/hkvPhmvfhnvfhpvvhrv/huwPhvwfhxwfhywvhzwvh4xfl5xfl6xfl8xvl9xvl9x/mByPmCyfmFyvmGyvmJzPmKzPmLzfmNzvqPzvqQz/qT0PqU0PqU0fqX0vqY0vqa0/qe1fqg1vqj1/uk1/un2fup2vut2/uv3Puw3Puw3fuz3vu13/u23/u34Pu44Pu64fu64fy84vy94vy+4/y/4/zD5fzE5fzG5vzH5vzI5/zK6PzL6PzR6/zT7P3U7P3V7f3W7f3Y7v3Z7v3c8P3e8f3f8f3g8f3i8v3l8/3l9P3n9P3r9v7t9/7u9/7v+P7w+P7x+f7y+f70+v71+v74/P75/P76/f77/f78/f78/v79/v7+/v7////6dMsRAAAAG3RSTlMAAwURGxwhMTNic3SEh4iVp7XBzejt7vH5/f6PsMNWAAABsklEQVR4AWIYfGAUjIJRMAqYuYREJKWJAqLCPGwY+jnFpEkBEryMqPr5pEkFgkwo9kuTDviR/S9GhgFSHAgDuKXJAQIIA4TIMkAcEY4i0mQBVrgBkuQZwA43QJo8wIFhQEhEOIBQOutHJozDOP5Crp4e1RhkJ0tKGJFd6oNEdtmJyEIzpaZl5nrRZgaHM/2Pf5/vwXXfyagXgG93bwSAlEolowLMm9w83gibhXH2gKKVdD67gTnWjwCk+VVjMQS4suSnnjMLRVFc9sAHvAX2A9fySaXNBMbEZVUWscaHIMRuqwBgD8hDEbnsRmfjUKJkAQZGCTlO/xWBwIADQLIZBlY441MvfoF1xlFS/4fy+bzXKh4dgNJE7L3eh3tmtuWa+AMcMIY3dgUvZQpGEYmMw2kD7HC+R29UqyoXLaBd0QZxzgXgikLLDSqJTKU5HOcS0MsbA9jPqtwCRvXm2eorBbNIJBw3KJ9O4Yl+AAXdnyaLt7PWN3jRWLvzmAVp94zO5+n41/onfo/UpExxZqI0O7NQr0DhIq9Io7hQpbRYp7hiobRqo6ByFcNWuY6CUTAKRgEAo8X0lBD3V30AAAAASUVORK5CYII=
+    </icon>
+    <properties>
+        <propertyGroup caption="General">
+            <propertyGroup caption="General">
+                <property key="showAsPassowrd" type="boolean" defaultValue="false">
+                    <caption>Show as password</caption>
+                    <description></description>
+                </property>
+                <property key="inputMask" type="string" required="false">
+                    <caption>Input mask</caption>
+                    <description></description>
+                </property>
+                <property key="maxLengthType" type="enumeration" defaultValue="default">
+                    <caption>Maximum length</caption>
+                    <description></description>
+                    <enumerationValues>
+                        <enumerationValue key="default">Default (200)</enumerationValue>
+                        <enumerationValue key="unlimited">Unlimited</enumerationValue>
+                        <enumerationValue key="custom">Custom</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="customMaxLength" type="integer" defaultValue="200">
+                    <caption>Custom max length</caption>
+                    <description></description>
+                </property>
+                <property key="placeholder" type="textTemplate" required="false">
+                    <caption>Placeholder</caption>
+                    <description></description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Data Source">
+                <property key="valueAttribute" type="attribute" setLabel="true" required="false" onChange="onChangeAction">
+                    <caption>Attribute</caption>
+                    <description></description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                        <attributeType name="AutoNumber"/>
+                        <attributeType name="Decimal"/>
+                        <attributeType name="Integer"/>
+                        <attributeType name="Long"/>
+                        <attributeType name="HashString"/>
+                    </attributeTypes>
+                </property>
+                <property key="selectedAttributeType" type="enumeration" defaultValue="string">
+                    <caption>Attribute Type</caption>
+                    <description>Select the data type of attribute selected above.</description>
+                    <enumerationValues>
+                        <enumerationValue key="string">String</enumerationValue>
+                        <enumerationValue key="autoNumber">AutoNumber</enumerationValue>
+                        <enumerationValue key="decimal">Decimal</enumerationValue>
+                        <enumerationValue key="integer">Integer</enumerationValue>
+                        <enumerationValue key="long">Long</enumerationValue>
+                        <enumerationValue key="hashString">HashString</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="showQrImageUserInput" type="boolean" defaultValue="true">
+                    <caption>Show QR Image</caption>
+                    <description></description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Label">
+                <systemProperty key="Label" />
+            </propertyGroup>
+            <propertyGroup caption="Formatting">
+                <property key="decimalMode" type="enumeration" defaultValue="fixed">
+                    <caption>Decimal Mode</caption>
+                    <description></description>
+                    <enumerationValues>
+                        <enumerationValue key="fixed">Fixed</enumerationValue>
+                        <enumerationValue key="auto">Auto</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="decimalPrecision" type="integer" defaultValue="2">
+                    <caption>Decimal Precision</caption>
+                    <description></description>
+                </property>
+                <property key="groupDigits" type="boolean" defaultValue="false">
+                    <caption>Group Digits</caption>
+                    <description></description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Editability">
+                <systemProperty key="Editability"/>
+                <property key="readOnlyStyle" type="enumeration" defaultValue="dataView">
+                    <caption>Read-only style</caption>
+                    <description></description>
+                    <enumerationValues>
+                        <enumerationValue key="dataView">Based on data view (Control)</enumerationValue>
+                        <enumerationValue key="control">Control</enumerationValue>
+                        <enumerationValue key="text">Text</enumerationValue>
+                    </enumerationValues>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Visibility">
+                <systemProperty key="Visibility"/>
+            </propertyGroup>
+            <propertyGroup caption="Validation">
+                <property key="validationProperty" type="enumeration" defaultValue="none">
+                    <caption>Type</caption>
+                    <description></description>
+                    <enumerationValues>
+                        <enumerationValue key="none">(none)</enumerationValue>
+                        <enumerationValue key="required">Required</enumerationValue>
+                        <enumerationValue key="email">Email</enumerationValue>
+                        <enumerationValue key="custom">Custom</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="validationPropertyForDigit" type="enumeration" defaultValue="none">
+                    <caption>Type</caption>
+                    <description></description>
+                    <enumerationValues>
+                        <enumerationValue key="none">(none)</enumerationValue>
+                        <enumerationValue key="required">Required</enumerationValue>
+                        <enumerationValue key="positiveNumber">Positive Number</enumerationValue>
+                        <enumerationValue key="custom">Custom</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="validationExpression" type="expression" required="false">
+                    <caption>Validation expression</caption>
+                    <description>Provide regular expression as a string e.g. '^[A-Z]+$' . The value entered in the textbox would be validated against the expression provided.</description>
+                    <returnType type="String" />
+                </property>
+                <property key="validationMessage" type="string" required="false">
+                    <caption>Message</caption>
+                    <description></description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Accessibility">
+                <property key="screenReaderCaption" type="textTemplate" required="false">
+                    <caption>Screen reader caption</caption>
+                    <description></description>
+                </property>
+                <property key="ariaRequired" type="boolean" defaultValue="false">
+                    <caption>Aria required</caption>
+                    <description></description>
+                </property>
+                <property key="autoComplete" type="enumeration" defaultValue="on">
+                    <caption>Autocomplete</caption>
+                    <description></description>
+                    <enumerationValues>
+                        <enumerationValue key="on">On</enumerationValue>
+                        <enumerationValue key="off">Off</enumerationValue>
+                        <enumerationValue key="name">Full name</enumerationValue>
+                        <enumerationValue key="honorific_prefix">Honorific prefix</enumerationValue>
+                        <enumerationValue key="given_name">Given name</enumerationValue>
+                        <enumerationValue key="additional_name">Additional name</enumerationValue>
+                        <enumerationValue key="family_name">Family name</enumerationValue>
+                        <enumerationValue key="honorific_suffix">Honorific suffix</enumerationValue>
+                        <enumerationValue key="nickname">Nickname</enumerationValue>
+                        <enumerationValue key="job_title">Job title</enumerationValue>
+                        <enumerationValue key="username">Username</enumerationValue>
+                        <enumerationValue key="new_password">New password</enumerationValue>
+                        <enumerationValue key="current_password">Current password</enumerationValue>
+                        <enumerationValue key="company">Company name</enumerationValue>
+                        <enumerationValue key="street_address">Street address</enumerationValue>
+                        <enumerationValue key="address_line1">Address line 1</enumerationValue>
+                        <enumerationValue key="address_line2">Address line 2</enumerationValue>
+                        <enumerationValue key="address_line3">Address line 3</enumerationValue>
+                        <enumerationValue key="address_level4">Address level 4</enumerationValue>
+                        <enumerationValue key="address_level3">Address level 3</enumerationValue>
+                        <enumerationValue key="address_level2">Address level 2</enumerationValue>
+                        <enumerationValue key="address_level1">Address level 1</enumerationValue>
+                        <enumerationValue key="country">Country code</enumerationValue>
+                        <enumerationValue key="country_name">Country name</enumerationValue>
+                        <enumerationValue key="postal_code">Postal code</enumerationValue>
+                        <enumerationValue key="cc_name">Credit card full name</enumerationValue>
+                        <enumerationValue key="cc_given_name">Credit card given name</enumerationValue>
+                        <enumerationValue key="cc_additional_name">Credit card additional name</enumerationValue>
+                        <enumerationValue key="cc_family_name">Credit card family name</enumerationValue>
+                        <enumerationValue key="cc_number">Credit card number</enumerationValue>
+                        <enumerationValue key="cc_exp">Credit card expiration</enumerationValue>
+                        <enumerationValue key="cc_exp_month">Credit card expiration month</enumerationValue>
+                        <enumerationValue key="cc_exp_year">Credit card expiration year</enumerationValue>
+                        <enumerationValue key="cc_csc">Credit card security code</enumerationValue>
+                        <enumerationValue key="cc_type">Credit card type</enumerationValue>
+                        <enumerationValue key="transaction_currency">Transaction currency</enumerationValue>
+                        <enumerationValue key="transaction_amount">Transaction amount</enumerationValue>
+                        <enumerationValue key="language">Language</enumerationValue>
+                        <enumerationValue key="bday">Birthday</enumerationValue>
+                        <enumerationValue key="bday_day">Day of birth</enumerationValue>
+                        <enumerationValue key="bday_month">Month of birth</enumerationValue>
+                        <enumerationValue key="bday_year">Year of birth</enumerationValue>
+                        <enumerationValue key="sex">Sex</enumerationValue>
+                        <enumerationValue key="url">URL</enumerationValue>
+                        <enumerationValue key="photo">Photo</enumerationValue>
+                        <enumerationValue key="tel">Telephone</enumerationValue>
+                        <enumerationValue key="tel_country_code">Telephone country code</enumerationValue>
+                        <enumerationValue key="tel_national">Telephone without country code</enumerationValue>
+                        <enumerationValue key="tel_area_code">Telephone area code</enumerationValue>
+                        <enumerationValue key="tel_local">Telephone local number</enumerationValue>
+                        <enumerationValue key="tel_local_prefix">Telephone local prefix</enumerationValue>
+                        <enumerationValue key="tel_local_suffix">Telephone local suffix</enumerationValue>
+                        <enumerationValue key="tel_extension">Telephone extension</enumerationValue>
+                        <enumerationValue key="email">Email</enumerationValue>
+                        <enumerationValue key="impp">Instant message protocol</enumerationValue>
+                    </enumerationValues>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+        <propertyGroup caption="Common">
+            <propertyGroup caption="Common">
+                <systemProperty key="Name"/>
+                <systemProperty key="TabIndex"/>
+            </propertyGroup>
+        </propertyGroup>
+        <propertyGroup caption="Events">
+            <propertyGroup caption="Events">
+                <property key="onClickAction" type="action" required="false">
+                    <caption>On click action</caption>
+                    <description>Action to trigger when Barcode QR image is clicked</description>
+                </property>
+                <property key="onBarcodeScanAction" type="action" required="false">
+                    <caption>On Barcode scanned value action</caption>
+                    <description>Action to trigger when Barcode scanned value is populated in the textbox</description>
+                </property>
+                <property key="onChangeAction" type="action" required="false">
+                    <caption>On change</caption>
+                    <description>Action to trigger when textbox value is changed</description>
+                </property>
+                <property key="onEnterAction" type="action" required="false">
+                    <caption>On enter</caption>
+                    <description></description>
+                </property>
+                <property key="onLeaveAction" type="action" required="false">
+                    <caption>On leave</caption>
+                    <description></description>
+                </property>
+                <property key="onEnterKeyAction" type="action" required="false">
+                    <caption>On Enter key press</caption>
+                    <description></description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="On change behavior">
+                <property key="submitWhileEditing" type="enumeration" defaultValue="whenLeave">
+                    <caption>Apply Changes</caption>
+                    <description></description>
+                    <enumerationValues>
+                        <enumerationValue key="whenLeave">When user leaves input field</enumerationValue>
+                        <enumerationValue key="whileEditing">While user is entering data</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="submitDelay" type="integer" defaultValue="300">
+                    <caption>Apply after (ms)</caption>
+                    <description>Wait this period before applying changes to the object</description>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+    </properties>
+</widget>

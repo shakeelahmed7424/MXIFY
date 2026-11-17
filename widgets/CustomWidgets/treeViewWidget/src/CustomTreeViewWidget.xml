@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.customtreeviewwidget.CustomTreeViewWidget"
+        pluginWidget="true"
+        needsEntityContext="true"
+        offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+
+    <name>Custom Tree View Widget</name>
+    <description>A custom tree view widget to display a recursive tree node.</description>
+    <icon />
+
+    <properties>
+        <propertyGroup caption="General">
+            <property key="items" type="datasource" isList="true" required="true">
+                <caption>Data Source</caption>
+                <description>The list of workflows or steps.</description>
+            </property>
+
+            <property key="displayName" type="attribute" dataSource="items" required="true">
+                <caption>Name</caption>
+                <description>Display name of the node</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+
+            <property key="hasChild" type="attribute" dataSource="items" required="true">
+                <caption>Has Children</caption>
+                <description>Indicates whether the node has children</description>
+                <attributeTypes>
+                    <attributeType name="Boolean" />
+                </attributeTypes>
+            </property>
+
+            <property key="children" type="association" dataSource="items" selectableObjects="items" required="true">
+                <caption>Children</caption>
+                <description>Reference set for child nodes</description>
+                <associationTypes>
+                    <associationType name="ReferenceSet" />
+                </associationTypes>
+            </property>
+
+            <property key="parentIcon" type="image" required="false">
+                <caption>Folder Icon</caption>
+                <description>Icon used for expandable nodes</description>
+            </property>
+
+            <property key="childIcon" type="image" required="false">
+                <caption>Leaf Icon</caption>
+                <description>Icon used for terminal nodes</description>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Events">
+            <property key="onClick" type="action" dataSource="items" required="false" >
+                <caption>Node Click</caption>
+                <description>Triggered when a node is clicked</description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>

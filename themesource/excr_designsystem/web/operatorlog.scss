@@ -1,0 +1,1036 @@
+@import '../../../theme/web/custom-variables';
+//do not copy and paste classes elsewhere - a lot of important tags to override default mendix style
+.OperatorLog{
+     --color-white: #FFFFFF;
+  --color-black-transparent-4d: #0000004D;
+  --color-black-transparent-26: #00000026;
+  --color-gray-ddd: #ddd;
+  --color-gray-464646: #464646;
+  --color-gray-1e1e1e: #1e1e1e;
+  --color-blue-focus-outline: #005F87;
+  --color-blue-focus-border: #0F789B;
+  --color-blue-hover-light: #DAECF0;
+  --color-blue-active-light: #CDE6EB;
+  --color-blue-selected: #d0e7ee;
+  --color-blue-outline-0f789b: #0f789b;
+  --color-scrollbar-thumb: #888;
+  --color-scrollbar-track: #f1f1f1;
+}
+.operatorLogButton{
+    width: 256px;
+    height: 40px;
+    margin-top: 8px;
+    font-family: "Segoe UI", "Open Sans", Verdana, Arial, Helvetica, sans-serif;
+    font-size: 17.28px;
+    font-weight: 600;
+    border: 1px solid #FFFFFF;
+    img{
+         -webkit-filter:  brightness(0%) invert(1);
+  filter: brightness(0%) invert(1);
+     width: 24px;
+    height: 24px;
+    }
+}
+
+.operatorLogButton:focus {
+    background-color: #005F87 !important;            
+    outline: 2px solid #aae6f5 !important; 
+    outline-offset: 2px !important;
+    border: 1px solid #FFFFFF !important;
+}
+.LogDocAttach-Page{
+
+  .widget-file-uploader{
+    margin-top: 8px !important;
+  }
+  .files-list{
+    max-height: 15vh;
+    overflow: auto;
+  }
+  .widget-file-uploader .dropzone{
+    margin-bottom: 16px !important;
+  }
+  .file-entry{
+    margin-bottom: 8px !important;
+  }
+  
+  .mx-dataview-controls{
+    padding-top: 0px !important ;
+  }
+    min-height: 600px;
+      max-width: 80%;
+      min-width: 400px !important;
+    overflow: hidden !important;
+      max-height: 80vh;
+
+      width:700px !important;
+    block-size: fit-content;
+    padding: 4px;
+    height: auto;
+    font-family: "Segoe UI", "Open Sans", Verdana, Arial, Helvetica, sans-serif;
+    .OpLog-Buttons{
+      width: fit-content;
+      margin: auto;
+      align-content: center;
+    }
+    .DocAttachInput{
+      display: flex;
+      flex-direction: column;
+      padding:4px;
+      padding-left: 8px;
+    
+      max-width: 530px;
+      .control-label{
+          white-space: nowrap;
+          text-align: left;
+          position: relative;
+          
+      }
+      .form-control,.mx-compound-control{
+          margin-bottom: 16px !important;
+          min-width: 360px;
+          max-width: 360px;
+      }
+      
+  }
+    .OpDocAttach{
+        padding: 8px;
+
+     
+    }
+      margin-bottom: 0px;
+.OpDocAttachInput{
+ .form-control {
+   
+    padding: 8px;
+    gap: 4px;
+    border: 1px solid var(--Controls-Input-border-light, #828282);
+    width: 360px;
+    height: 32px;
+    max-height: 32p;
+
+    &:hover {
+      box-shadow: inset 0 0 0 2px #828282 !important;
+      border-radius: 2px;
+      opacity: 1;
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 2px #0F789B !important;
+      border-radius: 2px;
+      opacity: 1;
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 2px #0F789B !important;
+      border-radius: 2px;
+      opacity: 1;
+    }
+  }
+}
+
+    .modal-body{
+        overflow-x: hidden ;
+    }
+    .OpDocAttach-Fields{
+      bottom:0px !important;
+ 
+      .form-group{
+        margin-bottom: 8px !important;
+      }
+        .control-label{
+            padding: 8px 0px!important;
+        }
+            
+             
+        input{
+            font-size: 12px!important;
+        }
+    
+
+        }
+    label{
+        font-size: 12px;
+
+        
+    }
+    // .widget-opcoretextbox-holder{
+    //     width: 300px !important;
+        
+    // }
+    .OpLog-Buttons{
+       position: sticky !important;
+       align-content: flex-end;
+       justify-content: flex-end;
+        width: fit-content;
+        
+       margin-top: 16px;
+      
+    
+       margin-bottom:-8px !important;
+       margin-right:-24px;
+       margin-left: 16px ;
+    }
+    .doc-attach-upload{
+        .mx-compound-control,.form-control{
+            min-height: 32px !important;
+            max-height: 32px! important;
+            min-width: 300px !important;
+            width: 300px !important ;
+            max-width: 300px !important  ;
+            position: relative;
+        }
+      
+      
+    }
+}
+   @media screen and (max-height: 800px){
+         .op-doc-button{
+            margin-bottom: 8px;
+            margin-top: 8px !important;
+        }
+
+     }
+.OperatorLog{
+.oplog-fullpage{
+    .cancel-btn{
+        display: none !important;
+    }
+  
+}
+//below is directly copied from eproc.css
+.op_log_pane {
+    .Pane2{
+        overflow-x: hidden !important;
+    } 
+}
+
+.oplog-document-viewer-pane {
+  
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    zoom:150%;
+
+ 
+    div {
+      flex: 0 1 auto; // Settings all the div's to height 100%
+    }
+
+    .widget-carousel div {
+      // Settings all the div's inside widget-carousel to specified height
+      flex: 0 0 auto;
+    }
+
+    
+    .documentViewer {
+      .nav-tabs {
+        margin-left: -16px;
+      }
+
+      .document-viewer-header {
+        padding:8px;
+        text-align: left;
+        margin: auto;
+        width: 100%;
+        
+      
+       justify-content: space-between;
+        display: flex;
+        
+      
+      
+        .documentViewTypeButtonContainer{
+            width: auto;
+            
+            text-align: right;
+            
+            
+        }
+        
+        
+      }
+
+
+      .document-header-border {
+        border-bottom: 1px solid var(--color-black-transparent-26);
+        margin-left: 10px;
+        margin-right: 10px;
+        clear: both;
+      }
+
+      .documentViewerTab {
+        width: 100%;
+        // max-height: 45vh;
+        display: flex;
+        flex-direction: column;
+
+        .tab-content {
+          overflow-x: hidden;
+          overflow-y: hidden;
+          scrollbar-width: thin;
+        }
+      }
+
+      .documentViewTypeButtonContainer {
+      
+        width: 200px;
+        align-items: center;
+        
+        position: relative;
+
+        button {
+           margin: auto;
+          padding: 6px;
+          border: none !important;
+          box-shadow: none;
+          margin-right:16px;
+          align-self: right;
+          img {
+            width: 24px;
+            height: 24px;
+          }
+
+          &:hover {
+            background-color: var(--color-blue-hover-light) !important;
+          }
+
+          &:focus {
+            border: 2px solid var(--color-blue-focus-outline) !important;
+          }
+
+          &:active {
+            background-color: var(--color-blue-active-light) !important;
+          }
+        }
+      }
+
+      .documentListContainer {
+        overflow: auto;
+        height: 46vh;
+        scrollbar-width: thin;
+
+        .doc-item {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          background-color: var(--color-white);
+          border-bottom: 1px solid var(--color-gray-ddd);
+
+          /* Column padding override for doc-item children */
+          [class*="col-"] {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+          }
+
+          .document-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+
+            img {
+              width: 48px;
+              height: 48px;
+            }
+          }
+
+          .document-details {
+            flex: 1;
+            overflow: hidden;
+            padding-right: 10px !important;
+
+            .document-name {
+              font: var(--font-segoe-ui-600-14-4);
+              color: #000000;
+              margin-bottom: 2px;
+
+              span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+              }
+            }
+
+            .document-description {
+              font: var(--font-segoe-ui-400-12);
+              color: var(--color-gray-464646);
+
+              .descriptionDiv {
+                cursor: auto;
+              }
+
+              span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+              }
+            }
+          }
+
+          .document-action {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+              padding-left: 0px;
+            }
+
+            img {
+              width: 24px;
+              height: 24px;
+            }
+          }
+
+          /* Doc Item States */
+          &:hover {
+            background-color: var(--color-blue-hover-light) !important;
+          }
+
+          &:active {
+            background-color: var(--color-blue-active-light) !important;
+          }
+
+          &:focus {
+            border: 2px solid var(--color-blue-focus-border) !important;
+          }
+
+          &.selected {
+            background-color: var(--color-blue-selected);
+          }
+        }
+      }
+
+      .widget-gallery .widget-gallery-items.widget-gallery-lg-1 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        justify-content: start;
+        gap: 8px;
+      }
+
+      /*-----------------------------------------------------Document Pre-View Starts------------------------------------------------------------*/
+      .documentPreViewContainer {
+        margin-top: 8px;
+        container-type:inline-size;
+        .document-title{
+           padding-left: 8px;
+            zoom:100%;
+            width: fit-content;
+            font-family: Segoe UI;
+            font-weight: 600;
+            font-size: 14.4px;
+            line-height: 19px;
+            min-width: 10px;
+            max-width: 60cqw;
+            text-overflow: ellipsis;
+        
+        }
+
+        .docPreviewContainer {
+            
+          overflow: auto;
+          height: 45vh;
+        display: flex;
+            padding: 8px;
+            
+          .widget-document-viewer-content {
+            
+            scrollbar-width: thin;
+        
+            margin: auto;
+          
+             width: 100% !important;
+            height:auto;
+           
+    
+          }
+          img{
+             align-items: center;
+            max-height: calc(45vh - 76px);
+            
+          }
+       
+          .widget-document-viewer{
+              width: 100% !important;
+              margin: auto;
+            
+               
+          }
+
+
+          .documentPreview {
+              
+              
+          
+            height: 100%;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            overflow: auto;
+           
+            min-height: 350px;
+
+            ._3dViewer {
+              width: 100%;
+              height: 100%;
+
+              .mx-3d-viewer-container-host {
+                min-width: 328px;
+                min-height: 350px;
+              }
+            }
+
+            .documentName {
+              span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+                width: 130px;
+              }
+            }
+          }
+
+
+          .docNotSelectedText {
+            font-family: "Segoe UI";
+            font-style: italic;
+            font-size: 17.28px;
+            font-weight: 400;
+            color: #6E6E6E;
+            user-select: none;
+            margin: 0;
+          }
+
+          .docSelectedText {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+
+            font-family: "Segoe UI";
+            font-size: 14.4px;
+            font-weight: 600;
+            color: #1E1E1E;
+
+            margin: 0;
+            padding: 0;
+            z-index: 1000;
+          }
+
+          .notSupportedContainer {
+            img {
+              width: 48px;
+              height: 48px;
+            }
+          }
+
+          .widget-document-viewer-controls {
+            margin-right: 5px;
+
+            input[type="text"] {
+              width: 25px;
+              height: 20px;
+              margin: 5px;
+            }
+
+            .icon-Download {
+              margin-top: 6px;
+            }
+          }
+        }
+
+        .docPreviewFooter {
+          position: fixed;
+          bottom: 0px;
+          width: -webkit-fill-available;
+          .item-title{
+          max-width: 62px;
+          overflow-x:hidden;
+          text-overflow: ellipsis;
+          
+
+        }
+        }
+
+        .carouselMinWidth {
+          width: 30%;
+        }
+
+        .carouselMedWidth {
+          width: 50%;
+        }
+
+        .carouselMaxWidth {
+          width: 100%;
+        }
+      }
+
+      /*-----------------------------------------------------Document Pre-View Ends------------------------------------------------------------*/
+
+    }
+  }
+
+  /*-----------------------------------------------------Document Viewer Ends------------------------------------------------------------*/
+.OpLog-documentViewer{
+    height: 100%;
+   
+   
+    
+
+}
+
+.OperatorLog-PopUp{
+    overflow-y: hidden;
+    min-height: 80vh;
+    max-height: 80vh;
+    height: 80vh !important;
+    min-width: 80vw !important;
+    max-width: 80vw;
+    width: 80%;
+    .modal-body{
+        overflow-y: hidden ;
+    }
+   .btn-calendar{
+       display: none;
+   }
+   .op-doc-button{
+       margin-left:  -15px;
+   }
+   .OpLog-Entry{
+       height:40px ;
+      
+  
+   }
+    .infinite-loading{
+        max-height: 25vh !important;
+    }
+    .filter-selectors{
+        max-height: 18vh !important; 
+    }
+    .OpLog-List{
+        margin-top: 8px;
+       overflow-x:visible !important;
+    }
+        @media screen and (max-height: 800px){
+        .op-doc-button{
+
+        margin-top: 24px !important;
+    }
+
+     }
+        @media screen and (max-height: 900px){
+         .filter-selectors{
+        max-height: 10vh !important; 
+     
+        }
+        .infinite-loading{
+            height: 20vh !important ;
+        }
+         .op-doc-button{
+       margin-left:  16px;
+        }
+ 
+         .OpLog-Entry{
+             margin-right: 16px;
+             max-width:300px !important;
+             margin-bottom: 16px;
+            textarea{
+                width:300px !important;
+                
+            }
+        }
+ 
+    }
+}
+
+.operatorLogButton{
+    width: 256px;
+    height: 40px;
+    margin-top: 8px;
+    font-family: "Segoe UI", "Open Sans", Verdana, Arial, Helvetica, sans-serif;
+    font-size: 17.28px;
+    font-weight: 600;
+    img{
+         -webkit-filter:  brightness(0%) invert(1);
+  filter: brightness(0%) invert(1);
+     width: 24px;
+    height: 24px;
+    }
+}
+
+.OperatorLog,.OpDocAttach{
+    font-family: "Segoe UI", "Open Sans", Verdana, Arial, Helvetica, sans-serif;
+
+    height:99%;
+    max-height:99% ;
+  label{
+        font-weight: 600;
+        font-style: Semibold;
+        font-size: 12px;
+        line-height: 16px;
+        }
+ .OpLog-Header{
+   display: flex;
+   flex-direction: column;
+      max-height: 25vh;
+    
+      padding:8px 16px;
+      margin-bottom: 8px;
+      .row{
+          height: fit-content;
+          
+      }
+      .form-group{
+          margin-bottom: 8px !important;
+      }
+      
+  }
+  
+    .OpLog-Entry-Row{
+ 
+
+        .op-doc-button{
+            margin-top: 26px //label line height + bottom margin + comment top margin;
+        }
+        .mx-textarea{
+             min-width: 0px !important;
+                display:flex;
+          flex:1;
+       
+        min-width: 0px !important;
+        }
+          .OpLog-Entry{
+           
+        
+            textarea{
+                //calculated from drop down heights + spacing
+                //width of drop down (300) + space between + padding - textarea's padding
+               color: #1E1E1E !important ;
+                width:630px;
+                max-height: 120px !important;
+               
+                
+            }
+        }
+        
+    }
+
+
+
+    //bellow is overriding default widget-combo box. Do not copy/paste styles, as there is a lot of !important tagsg
+    .OpLogType-Selection,.OpLog-Selection{
+      padding-left: 8px !important;
+      padding-right: 0px;
+        font-size:16px ;
+        
+        label{
+          padding-left: 8px;
+        }
+        .PrefixCustomDropdown__loading-indicator{
+          display: flex;
+    transition: color 150ms;
+    align-self: center;
+    font-size: 4px;
+    line-height: 1;
+    margin-right: 8px;
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(102, 102, 102);
+    padding: 8px;
+    box-sizing: border-box;
+        }
+        .PrefixCustomDropdown__single-value{
+          margin-bottom: 4px !important;
+        }
+        .PrefixCustomDropdown__control 
+          {
+            width:300px;
+           
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .PrefixCustomDropdown__indicator,.PrefixCustomDropdown__indicators{
+            width: fit-content;
+          }
+  
+        .CustomDropdown{
+          margin-left:8px;
+          margin-right:8px; 
+        }
+  
+      
+    }
+
+.OpLog_DocBtns{
+
+    width: auto;
+    position:fixed;
+    right:16px;
+    text-align: right;
+    z-index: 99;
+}
+    .OpLog-Main{
+       
+        height: 55vh ;
+        max-height: 55vh;
+
+        padding-bottom: 16px;
+          .docpane_min
+        //   ,.docpane_min.disabled
+        {
+            border: 2px solid var(--color-blue-focus-outline) !important;
+           
+        }
+        .docpane_min,.docpane_min.disabled
+        {
+            background-color: transparent !important;
+           
+            outline: none !important;
+        }
+ .Max_Min_Button{
+       width: 48px;
+    height: 48px;
+    background: transparent;
+    box-shadow: none;
+    border: 2px solid transparent !important;
+    transition: border-color 0s ease;
+
+    &:focus {
+      background-color: transparent !important;
+      border: 2px solid var(--color-blue-focus-outline) !important;
+      outline: none !important;
+    }
+
+    &:hover {
+      background-color: var(--color-blue-hover-light);
+      border: 2px solid transparent;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+
+    &:active {
+      background-color: var(--color-blue-active-light) !important;
+      outline: none !important;
+      border: 0;
+    }
+
+    img {
+      height: auto;
+      width: auto;
+      min-width: 24px;
+      min-height: 24px;
+    }
+    
+    
+ 
+ }
+
+    }
+   
+   .infinite-loading{
+       padding-right: 8px; //leave room for the scrollbar
+   }
+    @media screen and (max-height: 900px){
+        .infinite-loading{
+        min-height: 20vh; 
+        height: 30vh;
+        max-height: 30vh;
+         flex:1;
+        }
+        .filter-selectors{
+            max-height: 20vh !important; 
+        }
+         .react-datepicker__day{
+             height:16px !important; 
+             }
+        .react-datepicker__header__dropdown{
+            max-height: 20px !important;
+            .react-datepicker__month-select,.react-datepicker__year-select{
+                //overriding styles so the date picker is visible in smaller screens
+                max-height: 20px!important;
+                min-height: 20px !important;
+                height: 20px !important;
+         
+                padding:1px !important;
+            }
+        }
+        .OpLog-Selection{
+
+          padding-right:8px;
+          .mx-compound-control{
+            width: 250px !important;
+          }
+        }
+        .op-doc-button{
+          margin-top: 8px !important;
+        }
+        .OpLog-Entry{
+
+            textarea{
+                //calculated from drop down heights + spacing
+                width:524px;
+                
+            }
+        }
+ 
+    }
+     @media screen and (min-height: 901px){
+        .OpLog-Entry{
+
+            textarea{
+                //calculated from drop down heights + spacing
+                width:630px;
+                
+            }
+        }
+    .infinite-loading{
+        min-height: 20vh; //height of filter controls
+        height: 38vh;
+        max-height: 38vh;
+         flex:1;
+         
+    }
+     }
+
+      .OpLog-List{
+
+          display: flex;
+           max-height: 38vh;
+           overflow: visible;
+          flex:1;
+          
+          .widget-datagrid-grid{
+              padding-right:8px !important;
+              
+
+          }
+      
+        //   .column-container{
+        //       padding-left:8px;
+        //       padding-right: 8px;
+        //   }
+          .table:has(.th .column-container .filter:not(:empty)) .th{
+              padding-top:0px !important;
+                height: min-content;
+        
+               input[type=text]:enabled:active{
+                   border:none !important;
+               }
+               input[type=text]:enabled:focus{
+                   border:none !important;
+               }
+               input[type=text]:enabled:hover{
+                   border:none !important;
+               }
+               .filter-selector{
+                   
+                   
+                   overflow:visible;
+               }
+              .filter-selector .filter-selector-content .filter-selector-button{
+                  display: flex;
+                
+              }
+           
+                .react-datepicker__navigation--previous{
+                    left:2px !important;
+                    height:16px !important;
+                }
+                .react-datepicker__navigation--next{
+                    right:2px !important;
+                    height:16px !important;
+
+                }
+                .btn-calendar{
+                    padding: 8px !important;
+                }
+              .react-datepicker-popper{
+                
+                position: absolute !important;
+                left: 56px !important;
+                top:63px !important;
+                // top: calc(25vh + 63px + 48px)!important;
+                transform: unset !important;
+                .react-datepicker{
+                  position: fixed;
+                  z-index:210;
+                }
+                // .react-datepicker__day{
+                //     height:20px !important;
+                   
+                // }
+                .react-datepicker__day-names{
+                    margin-bottom:-16px !important;
+                }
+                .react-datepicker__month{
+                    margin-top:0px !important;
+                }
+              
+              }
+              
+              .filter-selectors{
+                  position: absolute !important;
+                  left:16px !important;
+                  top:unset !important;
+                  z-index: 200;
+                  overflow: auto;
+                  max-height: 25vh;
+                 
+              }
+          }
+            .th{
+                .column-header{
+                    
+                    font-weight: 600;
+                    font-style: Semibold;
+                    font-size: 12px ;
+                    line-height: 16px;
+                    padding-bottom: 8px;
+                    padding-left: 0px;
+                    padding-top: 8px !important;
+                  
+                }
+
+            }
+            .tr{
+                font-weight: 400;
+                font-style: Regular;
+                font-size: 12px;
+                line-height: 16px;
+            }
+           
+        }
+  
+        .OpLog-Buttons{
+            max-height: 5vh ;
+            position: absolute;
+            bottom:8px;
+            right:16px;
+            button{
+                height: 40px;
+                padding-left: 16px;
+                padding-right: 16px;
+                width: 98px;
+       
+
+            }
+            .col{
+                padding-left: 0px !important;
+            }
+            .col-auto{
+                padding-right: 0px !important;
+            }
+        }
+    
+     
+   
+}
+}

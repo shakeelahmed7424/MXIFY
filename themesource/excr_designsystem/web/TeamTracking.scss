@@ -1,0 +1,2387 @@
+@import '../../../theme/web/custom-variables';
+
+.ux-policies-web { 
+  &.ux-application-content-zoom {
+    zoom: 150% !important;
+
+    .widget-customDropdown-holder {
+      width: 210px !important;
+    }
+  
+    /* Fix tooltip positioning broken by zoom */
+    .widget-tooltip-content {
+      zoom: calc(1 / 1.5) !important;
+      transform-origin: top left;
+    }
+    
+    .workarea-type span.mx-text {
+      color: #1E1E1E !important;
+      font-family: "Segoe UI" !important;
+      font-size: 17.28px !important;
+      font-style: normal !important;
+      font-weight: 700 !important;
+      line-height: 23px !important;
+    }
+  }
+}
+
+div[id=content]:has(.ux-application-content-zoom) ~ div.swal2-container {
+  zoom: 150% !important;
+  padding: 43px 24px 0 0 !important;
+}
+
+/* ========================================
+   TILE BUTTON GRID LAYOUT
+   ======================================== */
+.ux-tile-button {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 0;
+  gap: 16px;
+
+  /* Icon size inside links and buttons */
+  .mx-link img, .mx-button img {
+    height: 24px;
+  }
+
+  /* Base button styles */
+  .btn,
+  .mx-button {
+    box-sizing: border-box;
+    padding: 8px 16px;
+    width: 100%;
+    min-width: 178px;
+    height: 50px;
+    min-height: 40px;
+
+    font: normal normal 600 25.92px / 36px 'Segoe UI';
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  /* Default state */
+  .btn-default {
+    color: #007993;
+
+    &:hover {
+      background: #daecf0;
+    }
+
+    &:active {
+      background: #005F87;
+    }
+
+    &:focus {
+      background: #EEF6F8;
+      color: #007993;
+    }
+  }
+
+  /* Selected state */
+  .selected-button {
+    background: #EEF6F8;
+    color: #007993;
+
+    &:hover {
+      background: #daecf0;
+    }
+  }
+
+  /* Disabled state */
+  .disabled-button {
+    pointer-events: none !important;
+    background: rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    color: rgba(0, 0, 0, 0.3) !important;
+  }
+}
+
+/* ========================================
+   SIGN IN & SIGN OUT BUTTONS
+   ======================================== */
+
+/* Enabled state */
+.ux-accordion .btn.btn-sign.btn-default,
+.ux-accordion .mx-button.btn-sign.btn-default {
+    color: #FFFFFF !important;
+    background: #005F87 !important;
+    border: 1px solid #003750 !important;
+    
+    width: 85px !important;
+    height: 35px !important;
+    min-width: 85px !important;
+    max-width: 85px !important;
+    
+    padding: 4px 8px !important;
+    border-radius: 2px !important;
+    
+    &:hover {
+      background: #004A6B !important;
+    }
+
+    &:active {
+      background: #003750 !important;
+    }
+
+    &:focus {
+      background: #005F87 !important;
+      color: #FFFFFF !important;
+    }
+}
+
+/* Disabled state */
+.ux-accordion .btn.btn-sign.disabled-button,
+.ux-accordion .mx-button.btn-sign.disabled-button {
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+    
+    background: rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    color: rgba(0, 0, 0, 0.3) !important;
+    
+    width: 85px !important;
+    height: 35px !important;
+    padding: 4px 8px !important;
+    border-radius: 2px !important;
+    
+    &:hover,
+    &:active,
+    &:focus {
+      background: rgba(0, 0, 0, 0.15) !important;
+      border: 1px solid rgba(0, 0, 0, 0.15) !important;
+      color: rgba(0, 0, 0, 0.3) !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+}
+
+/* ========================================
+   TEXT BOX LABEL
+   ======================================== */
+.mx-name-opcenterCoreTextBox1 .control-label,
+.mx-name-opcenterCoreTextBox2 .control-label {
+    color: #1E1E1E;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+/* ========================================
+   PANEL SECTION - GROUP BOX CONTAINER
+   ======================================== */
+.panel-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 4px 8px !important;
+    box-sizing: border-box;
+    position: relative !important;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: #FFF;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.30);
+}
+
+/* Reset internal padding and margins for all direct children */
+.panel-section > *,
+.panel-section .mx-groupbox-header,
+.panel-section .mx-groupbox-header *,
+.panel-section .mx-groupbox-body {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Remove layout grid side padding */
+.panel-section .mx-layoutgrid {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.panel-section .panel-section-content,
+.panel-section > .panel-section-content,
+.panel-section .mx-groupbox-body .panel-section-content {
+    margin: 0 !important;
+}
+
+/* ========================================
+   PANEL SECTION - COLLAPSE ICON
+   ======================================== */
+
+/* Expanded state - shows down arrow */
+.panel-section .mx-groupbox-header > .mx-groupbox-collapse-icon {
+    display: inline-block !important;
+    
+    font-size: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+
+    width: 24px !important;
+    height: 24px !important;
+    background-image: url('/img/EXCR_DesignSystem$Icon_Repository$miscDownArrowBlack16.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    
+    margin-right: 8px !important;
+    margin-left: 0 !important;
+    vertical-align: middle !important;
+    flex-shrink: 0 !important;
+    
+    transition: background-image 0.2s ease !important;
+}
+
+/* Collapsed state - shows right arrow */
+.panel-section.collapsed .mx-groupbox-header .mx-groupbox-collapse-icon,
+.panel-section.mx-groupbox-collapsed .mx-groupbox-header .mx-groupbox-collapse-icon {
+    background-image: url('/img/EXCR_DesignSystem$Icon_Repository$miscRightArrow16.svg') !important;
+}
+
+/* ========================================
+   PANEL SECTION - HEADER
+   ======================================== */
+.panel-section .mx-groupbox-header {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    background: #FFF !important;
+    background-color: #FFF !important;
+    width: 100% !important;
+    padding: 8px 8px !important;
+    padding-right: 100px !important;
+    min-height: 56px !important;
+
+    overflow: visible !important;
+    color: #1E1E1E !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    
+    font-family: "Segoe UI" !important;
+    font-size: 14.4px;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 19px;
+}
+
+/* Edge-to-edge separator line below header using pseudo-element */
+.panel-section .mx-groupbox-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    right: -8px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Hide separator line when panel is collapsed */
+.panel-section.collapsed .mx-groupbox-header::after,
+.panel-section.mx-groupbox-collapsed .mx-groupbox-header::after {
+    display: none;
+}
+
+/* Header text content */
+.panel-section .mx-groupbox-header .mx-groupbox-header-content,
+.panel-section .mx-groupbox-header > span:not(.mx-groupbox-collapse-icon),
+.panel-section .mx-groupbox-header > div {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 1 !important;
+    flex: 1 0 0 !important;
+    
+    overflow: hidden !important;
+    color: #1E1E1E !important;
+    text-overflow: ellipsis !important;
+    
+    font-family: "Segoe UI" !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ========================================
+   PANEL SECTION - HOVER & FOCUS STATES
+   ======================================== */
+
+/* Header hover - text color */
+.panel-section .mx-groupbox-header:hover {
+    color: #007993 !important;
+}
+
+/* Header hover - inner text color */
+.panel-section .mx-groupbox-header:hover .mx-groupbox-header-content,
+.panel-section .mx-groupbox-header:hover > span:not(.mx-groupbox-collapse-icon),
+.panel-section .mx-groupbox-header:hover > div {
+    color: #007993 !important;
+}
+
+/* Header hover - icon tint to match link color */
+.panel-section .mx-groupbox-header:hover .mx-groupbox-collapse-icon {
+    filter: brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(1087%) hue-rotate(157deg) brightness(91%) contrast(101%) !important;
+    transition: filter 0.2s ease !important;
+}
+
+/* Focus-within - highlight panel border */
+.panel-section:focus-within {
+    border: 1px solid #149EEB !important;
+    border-radius: 2px !important;
+}
+
+/* Default border */
+.panel-section {
+    border: 1px solid rgba(0, 0, 40, 0.20) !important;
+    border-radius: 2px !important;
+    transition: border-color 0.2s ease !important;
+}
+
+/* ========================================
+   PANEL SECTION - SIGN BUTTON (HEADER)
+   Absolutely positioned inside the header
+   ======================================== */
+.panel-section .btn-sign {
+    position: absolute !important;
+    top: 8px !important;
+    right: 8px !important;
+    z-index: 10 !important;
+    margin: 0 !important;
+
+    color: #FFFFFF !important;
+    background: #003750 !important;
+    border: 1px solid #003750 !important;
+    
+    width: 87px !important;
+    height: 40px !important;
+    min-width: 87px !important;
+    max-width: 87px !important;
+    
+    padding: 4px 8px !important;
+    border-radius: 2px !important;
+    
+    &:hover {
+      background: #004A6B !important;
+    }
+
+    &:active {
+      background: #003750 !important;
+    }
+
+    &:focus {
+      background: #005F87 !important;
+      color: #FFFFFF !important;
+    }
+}
+
+/* Disabled state */
+.panel-section .btn-sign.disabled-button {
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+    background: rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid rgba(0, 0, 0, 0.30) !important;
+    color: rgba(0, 0, 0, 0.3) !important;
+    width: 87px !important;
+    height: 40px !important;
+    padding: 4px 8px !important;
+    border-radius: 2px !important;
+}
+
+/* Active / clickable state */
+.panel-section .btn-sign:not(.disabled-button) {
+    width: 87px !important;
+    height: 40px !important;
+    padding: 4px 8px !important;
+    border-radius: 2px !important;
+    cursor: pointer !important;
+}
+
+/* ========================================
+   PANEL SECTION - BODY
+   Single scroll container, body handles all overflow
+   ======================================== */
+.panel-section .mx-groupbox-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+    padding: 8px !important;
+
+    flex: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    min-height: 0 !important;
+}
+
+/* Remove top padding for groupBox1 body only */
+.panel-section.mx-name-groupBox1 .mx-groupbox-body {
+    padding-top: 0 !important;
+}
+
+/* Workarea type container inside groupBox1 */
+.panel-section.mx-name-groupBox1 .mx-groupbox-body > .workarea-type-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-top: 8px !important;
+}
+
+/* Remove individual tile margins - gap handles spacing */
+.panel-section.mx-name-groupBox1 .workarea-type {
+    margin: 0 !important;
+}
+
+/* Remove form group spacing inside panel */
+.panel-section .form-group {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* ========================================
+   PANEL SECTION - WORKAREA CONTAINER
+   Flex wrap row layout for workarea items
+   ======================================== */
+.panel-section .mx-groupbox-body > .workarea-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* ========================================
+   PANEL SECTION - WORKAREA TYPE TILE
+   Fixed 328px × 40px tile, no grow/shrink
+   ======================================== */
+.panel-section .workarea-container > .workarea-type {
+    width: 328px !important;
+    max-width: 328px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    flex: 0 0 328px !important;
+    overflow: hidden !important;
+}
+
+/* All body children take full width */
+.panel-section .mx-groupbox-body > * {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Form elements take full width */
+.panel-section input,
+.panel-section textarea,
+.panel-section select,
+.panel-section .mx-textbox,
+.panel-section .mx-textarea {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   PANEL SECTION - GALLERY CONTENT
+   No scroll here - parent body handles it
+   ======================================== */
+.panel-section .widget-gallery-content {
+    position: relative !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-height: 290px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+/* ========================================
+   WORKAREA TYPE TILE
+   ======================================== */
+.workarea-type {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+  background-color: #ffffff;
+  padding: 16px;
+  gap: 8px;
+  
+  width: 230px;
+  height: 56px;
+  max-width: 230px;
+  max-height: 56px;
+
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #FFF;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.30);
+  
+  user-select: none;
+  cursor: pointer;
+  
+  margin: 8px;
+  max-width: 328px;
+  vertical-align: top;
+
+  /* Hover - only when not selected or disabled */
+  &:hover:not(.selected-button):not(.disabled-button) {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+    border-color: #5a79c8;
+  }
+
+  /* Focus - only when not selected or disabled */
+  &:focus-within:not(.selected-button):not(.disabled-button) {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    border: 2px solid #0F789B;  
+    border-radius: 3px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3) !important;
+  }
+
+  & > * {
+    margin: 0;
+  }
+
+  /* Default state */
+  &.default-btn {
+    background-color: white;
+    color: #1E1E1E;
+  }
+
+  /* Selected state */
+  &.selected-button {
+    background: #EEF6F8 !important;
+    background-color: #EEF6F8 !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+
+    &:hover {
+      background: #daecf0 !important;
+      background-color: #daecf0 !important;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    &:focus-within {
+      background: #EEF6F8 !important;
+      background-color: #EEF6F8 !important;
+      border: 2px solid #0F789B !important;
+      border-radius: 3px !important;
+    }
+
+    .checkbox-image img,
+    .checkbox-image svg {
+      filter: none;
+    }
+  }
+
+  /* Disabled state */
+  &.disabled-button {
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    color: rgba(0, 0, 0, 0.3) !important;
+    box-shadow: none !important;
+
+    .tile-title,
+    .container-name-text,
+    .mx-text {
+      color: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .checkbox-image img,
+    .checkbox-image svg {
+      opacity: 0.3 !important;
+      filter: grayscale(100%) !important;
+    }
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.15) !important;
+      border-color: rgba(0, 0, 0, 0.15) !important;
+      box-shadow: none !important;
+    }
+  }
+
+  /* Icon */
+  .checkbox-image {
+    position: static;
+    margin: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    filter: none;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    
+    img, svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+      object-fit: contain;
+      transition: filter 0.2s ease, opacity 0.2s ease;
+    }
+  }
+
+  /* Tile label text */
+  .tile-title {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    
+    color: #1E1E1E;
+    font-family: "Segoe UI";
+    font-size: 17.28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 23px;
+    
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    transition: color 0.2s ease;
+  }
+}
+
+/* ========================================
+   SEARCH BAR - DISABLED STATE
+   ======================================== */
+
+/* Disabled container */
+.container-search-bar-parent.disabled-container {
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+}
+
+/* Disabled input */
+.container-search-bar-parent.disabled-container input.form-control {
+    background: transparent !important;
+    color: #6b7280 !important;
+    cursor: not-allowed !important;
+    border: none !important;
+    pointer-events: none !important;
+}
+
+/* Disabled placeholder text */
+.container-search-bar-parent.disabled-container input.form-control::placeholder {
+    color: #9ca3af !important;
+    opacity: 0.7 !important;
+}
+
+/* Disabled search icon */
+.container-search-bar-parent.disabled-container .search-icon {
+    opacity: 0.2 !important;
+    cursor: not-allowed !important;
+}
+
+/* ========================================
+   WORKAREA GALLERY - CHECKBOX RESET
+   Remove default checkbox padding and float
+   ======================================== */
+.mx-page .workarea-gallery .checkbox-icon.mx-checkbox,
+.mx-page .widget-gallery-item .checkbox-group .checkbox-icon.mx-checkbox {
+  padding: 0 !important;
+  padding-top: 0 !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  float: none !important;
+}
+
+.mx-page .workarea-gallery .checkbox-icon.form-group,
+.mx-page .widget-gallery-item .checkbox-group .form-group {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ========================================
+   WORKAREA GALLERY - GRID LAYOUT
+   Auto-fill columns at 284px, left-aligned
+   ======================================== */
+.workarea-gallery.widget-gallery .widget-gallery-items.widget-gallery-lg-1 {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, 284px) !important;
+    column-gap: 16px !important;
+    row-gap: 0px !important;
+    justify-content: start !important;
+    width: 100% !important;
+    padding: 0 0 2px 0 !important;
+    margin: 0 !important;
+}
+
+/* ========================================
+   WORKAREA GALLERY - BASE STYLES
+   ======================================== */
+.workarea-gallery {
+  
+  /* Icon container */
+  .checkbox-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    padding: 0 !important;
+    flex-shrink: 0;
+    
+    img, svg {
+      width: 24px !important;
+      height: 24px !important;
+      display: block;
+      object-fit: contain;
+    }
+  }
+
+  /* Dimmed icon inside disabled tiles */
+  .disabled-container .checkbox-image img,
+  .disabled-container .checkbox-image svg {
+    opacity: 0.3 !important;
+    filter: grayscale(100%) !important;
+  }
+  
+  /* Tile card container */
+  .checkbox-group {
+    display: flex !important;
+    width: 284px !important;
+    height: auto !important;
+    min-height: 56px !important;
+    max-height: none !important;
+    padding: 16px !important;
+    
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    align-content: flex-start !important;
+    overflow: hidden;
+    
+    gap: 4px !important;
+    flex-wrap: wrap !important;
+    
+    position: relative;
+    background-color: #EEF6F8;
+    background: #EEF6F8;
+    
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.30);
+    
+    user-select: none;
+    transition: box-shadow .2s ease, border-color .2s ease;
+    
+    margin-left: 0px;
+    margin-top: 16px;
+    margin-right: auto;
+
+    /* Hover - only when not disabled */
+    &:not(.disabled-container):hover {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        border-color: #5a79c8;
+    }
+
+    /* Focus - only when not disabled */
+    &:not(.disabled-container):focus-within {
+        border: 2px solid #0F789B;  
+        border-radius: 3px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    & > * {
+        margin: 0;
+    }
+  }
+
+  /* ========================================
+   PROPERTY ROW - Label + Value
+   Second row inside a tile/checkbox-group
+   ======================================== */
+  .property-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-self: stretch;
+      width: 100%;
+      flex: 0 0 100%;
+      margin-top: 4px;
+      gap: 16px;
+      min-width: 0;
+      overflow: hidden;
+  }
+
+  .property-label {
+      color: #464646;
+      font-family: "Segoe UI";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+      flex-shrink: 0;
+  }
+
+  .property-value {
+      color: #1E1E1E;
+      font-family: "Segoe UI";
+      font-size: 14.4px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 19px;
+
+      /* Truncation */
+      flex: 1 1 0;
+      min-width: 0;
+      overflow: hidden;
+  }
+
+  /* Pass truncation down through tooltip wrapper */
+  .property-value .widget-tooltip-trigger {
+      display: block;
+      min-width: 0;
+      overflow: hidden;
+  }
+
+  /* Final truncation on the actual text span */
+  .property-value .widget-tooltip-trigger span,
+  .property-value .container-name-text {
+      display: block;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+
+  /* Remove float from checkbox */
+  .checkbox-icon.pull-left {
+    float: none !important;
+  }
+
+  /* Checkbox element */
+  .checkbox-icon {
+    position: static;
+    margin: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 3px !important;
+    cursor: pointer;
+    filter: none;
+    flex-shrink: 0;
+    width: 24px !important;
+    height: 24px !important;
+    
+    /* Unchecked */
+    input[type="checkbox"] {
+      background-color: white !important;
+      border-radius: 3px;
+      width: 18px !important;
+      height: 18px !important;
+      border: 1px solid #464646;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    /* Checked */
+    input[type="checkbox"]:checked {
+      background-color: #007993 !important;
+    }
+
+    .mx-checkbox-input:before {
+      background-color: white !important;
+      width: 18px;
+      height: 18px;
+    }
+
+    .mx-checkbox-input.mx-checked:before {
+      background-color: #007993 !important;
+    }
+  }
+
+  /* Hidden checkbox */
+  .checkbox-icon.hidden {
+    display: none;
+  }
+
+  /* Tile label text */
+  .tile-title {
+    flex: 1 1 0;
+    min-width: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    margin: 0;
+    padding: 0 !important;
+    
+    color: #1E1E1E;
+    font-family: "Segoe UI";
+    font-size: 17.28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 23px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left !important;
+    
+    /* Inner text span */
+    .container-name-text {
+      display: block;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: left !important;
+      
+      color: #1E1E1E;
+      font-family: "Segoe UI";
+      font-size: 17.28px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 23px;
+    }
+  }
+
+  /* Selected tile background */
+  .selected-container {
+    background-color: #EEF6F8;
+  }
+
+  /* Default tile background */
+  .container-default {
+    background-color: white;
+  }
+
+  /* Disabled tile */
+  .disabled-container {
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+  
+    .checkbox-icon {
+      pointer-events: none !important;
+      opacity: 1 !important;
+      
+      /* Disabled unchecked */
+      input[type="checkbox"] {
+        pointer-events: none !important;
+        cursor: not-allowed !important;
+        opacity: 1 !important;
+        background: rgba(0, 0, 0, 0.15) !important;
+        background-color: rgba(0, 0, 0, 0.15) !important;
+        border: 1px solid rgba(0, 0, 0, 0.30) !important;
+        border-radius: 3px !important;
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.30) !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        appearance: none !important;
+      }
+      
+      /* Disabled checked */
+      input[type="checkbox"]:checked {
+        background: rgba(0, 0, 0, 0.15) !important;
+        background-color: rgba(0, 0, 0, 0.15) !important;
+      }
+      
+      input[type="checkbox"]::before {
+        background: rgba(0, 0, 0, 0.15) !important;
+        background-color: rgba(0, 0, 0, 0.15) !important;
+        border: 1px solid rgba(0, 0, 0, 0.30) !important;
+        border-radius: 3px !important;
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.30) !important;
+      }
+      
+      input[type="checkbox"]::after {
+        background: rgba(0, 0, 0, 0.15) !important;
+        background-color: rgba(0, 0, 0, 0.15) !important;
+      }
+      
+      .mx-checkbox-input::before {
+        background: rgba(0, 0, 0, 0.15) !important;
+        background-color: rgba(0, 0, 0, 0.15) !important;
+        border: 1px solid rgba(0, 0, 0, 0.30) !important;
+        border-radius: 3px !important;
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.30) !important;
+        opacity: 1 !important;
+      }
+      
+      .mx-checkbox-input.mx-checked::before {
+        background: rgba(0, 0, 0, 0.15) !important;
+        background-color: rgba(0, 0, 0, 0.15) !important;
+      }
+      
+      label {
+        cursor: not-allowed !important;
+      }
+    }
+    
+    /* Disabled text */
+    .container-name-text,
+    .tile-title,
+    .mx-text,
+    span {
+      color: rgba(0, 0, 0, 0.3) !important;
+    }
+  }
+
+  /* Remove default selected gallery highlight */
+  .widget-gallery-selected {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;  
+  }
+
+  /* Gallery content wrapper */
+  .widget-gallery-content {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Gallery items grid */
+  .widget-gallery-items {
+    display: grid !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Individual gallery item */
+  .widget-gallery-item {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* ========================================
+   TOOLTIP - Escape overflow hidden parents
+   ======================================== */
+.workarea-gallery .widget-tooltip-content,
+.workarea-type .widget-tooltip-content {
+    position: fixed !important;
+    z-index: 9999 !important;
+    white-space: normal !important;
+    max-width: 250px !important;
+    word-break: break-word !important;
+    pointer-events: none !important;
+}
+
+/* ========================================
+   TEAM GALLERY - Text Only, Bottom-Right Aligned
+   ======================================== */
+.mx-name-galleryTeam .checkbox-group {
+
+  /* Hide checkbox for team gallery */
+  .checkbox-icon {
+      display: none !important;
+  }
+  
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  
+  /* Text aligned to bottom-right */
+  .tile-title {
+      width: 100% !important;
+      text-align: right !important;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      padding: 0 !important;
+  }
+  
+  .container-name-text {
+      text-align: right !important;
+  }
+}
+
+/* ========================================
+   TEAM GALLERY - Fixed 2-Row Max Height
+   ======================================== */
+.mx-name-galleryTeam .widget-gallery-content {
+    max-height: 154px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+.workarea-type-container .mx-name-galleryTeam .widget-gallery-content {
+    max-height: 154px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+/* ========================================
+   TEXT-ONLY GALLERY
+   ======================================== */
+.text-only-gallery {
+  
+  /* Tile card container */
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
+    justify-content: flex-start;
+    
+    background-color: #ffffff;
+    padding: 12px;
+    gap: 10px;
+    
+    width: 280px;
+    height: 80px;
+    
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.30);
+    
+    user-select: none;
+    transition: box-shadow .2s ease, border-color .2s ease;
+    
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-right: auto;
+    max-width: 600px;
+
+    &:hover {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        border-color: #5a79c8;
+    }
+
+    &:focus-within {
+        border: 2px solid #0F789B;  
+        border-radius: 3px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+
+        .checkbox-image {
+            background-color: #ffffff;
+        }
+    }
+
+    & > * {
+        margin: 0;
+    }
+  }
+
+  /* Text-only tile variant - hides all checkbox elements */
+  .checkbox-group.text-only-tile {
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 80px;
+    
+    .checkbox-label,
+    .checkbox-image,
+    .checkbox-icon {
+      display: none !important;
+    }
+  }
+
+  /* Centered text label for text-only tiles */
+  .text-only-title {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0 12px;
+    font-size: 22.5px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  /* Selected tile */
+  .selected-container {
+    background-color: #EEF6F8;
+    .checkbox-image {
+        background-color: #ffffff;
+        margin-top: -60px;
+    }
+  }
+
+  /* Default tile */
+  .container-default {
+    background-color: white;
+    .checkbox-image {       
+        margin-top: -60px;
+    }
+  }
+
+  /* Disabled tile */
+  .disabled-container {
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: none !important;
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+
+    /* Disabled text */
+    .container-name-text,
+    .tile-title,
+    .mx-text,
+    .text-only-title,
+    span {
+        color: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    /* Disabled checkbox */
+    .checkbox-icon {
+      pointer-events: none !important;
+      opacity: 0.5 !important;
+      box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.30) !important;
+      border-radius: 3px !important;
+      border: 1px solid rgba(0, 0, 0, 0.30) !important;
+      background: rgba(0, 0, 0, 0.15) !important;
+      background-color: rgba(0, 0, 0, 0.15) !important;
+      
+      input[type="checkbox"] {
+        pointer-events: none !important;
+        background: rgba(0, 0, 0, 0.15) !important;
+        background-color: rgba(0, 0, 0, 0.15) !important;
+        border: 1px solid rgba(0, 0, 0, 0.30) !important;
+        opacity: 0.5 !important;
+      }
+      
+      .mx-checkbox-input:before {
+        background: rgba(0, 0, 0, 0.15) !important;
+        background-color: rgba(0, 0, 0, 0.15) !important;
+        border: 1px solid rgba(0, 0, 0, 0.30) !important;
+      }
+      
+      .mx-checkbox-input.mx-checked:before {
+        background: rgba(0, 0, 0, 0.15) !important;
+        background-color: rgba(0, 0, 0, 0.15) !important;
+      }
+    }
+  }
+
+  /* Card with checkbox - base */
+  .card-checkbox {
+    border: 1px solid #220505;
+    border-radius: 3px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background-color: white;
+  }
+
+  /* Card selected state */
+  .card-checkbox.selected {
+    border: 2px solid #c1caca;
+    background-color: #F4F8FF;
+  }
+
+  /* Checkbox icon positioning */
+  .checkbox-icon {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    gap: 0px;
+    margin-left: -12px;
+    margin-top: -22px;
+    margin-bottom: 16px;
+    color: #160202;
+    cursor: pointer;
+    filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.3));
+    pointer-events: auto;
+  }
+
+  /* Unchecked */
+  .checkbox-icon input[type="checkbox"] {
+    background-color: white !important;
+    border-radius: 3px;
+  }
+
+  /* Checked */
+  .checkbox-icon input[type="checkbox"]:checked {
+    background-color: #007993 !important;
+  }
+
+  .checkbox-icon .mx-checkbox-input:before {
+    background-color: white !important;
+  }
+
+  .checkbox-icon .mx-checkbox-input.mx-checked:before {
+    background-color: #007993 !important;
+  }
+
+  /* Hidden checkbox */
+  .checkbox-icon.hidden {
+    display: none;
+  }
+
+  /* Short title label */
+  .checkbox-title {
+    width: 110px;
+    height: 20px;
+    font-size: 17.28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 3px;
+    display: inline-block;
+  }
+
+  /* Sub-label below title */
+  .checkbox-label {
+    height: 20px;
+    font-size: 19.5px;
+    font-weight: 500;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: -50px;
+    margin-bottom: 0;
+    line-height: 1.1;
+  }
+
+  /* Icon thumbnail */
+  .checkbox-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 3px;
+    border: 2px solid rgba(0, 0, 40, 0.15);
+    color: #ffffff;
+    font-size: 21px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-top: -60px;
+    margin-left: -5px;
+  }
+
+  /* Full tile label */
+  .tile-title {
+    width: 250px;
+    height: 20px;
+    font-size: 22.5px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 28px;
+    margin-left: 50px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+
+  /* Remove default selected gallery highlight */
+  .widget-gallery-selected {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;  
+  }
+
+  /* Container name text */
+  .container-name-text {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 645;
+    font-size: 24.42px;
+    line-height: 28.5px;
+    color: #1E1E1E;
+  }
+}
+
+/* ========================================
+   ACCORDION - BASE STYLES
+   ======================================== */
+.ux-accordion {
+   .widget-accordion-group {
+    border-bottom: none;
+    background: #fff;
+
+    .widget-accordion-group-content {
+      padding: 0px 12px 0px;
+      background: #fff;
+    }
+
+    .widget-accordion-group-header {
+      h3 {
+        margin-top: 0;
+        font-size: 24px !important;
+      }
+
+      .widget-accordion-group-header-button {
+        background: #fff;
+        padding: 6px;
+      }
+    }
+  }
+
+  /* Base button styles */
+  .btn,
+  .mx-button {
+    width: 85px;
+    height: 35px;
+    border-radius: 2px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+    gap: 8px;
+
+    color: #005F87;
+    background: transparent;
+    border: none;
+    box-shadow: none; 
+  }
+
+  /* Default state */
+  .btn-default {
+    &:hover {
+      background: #daecf0;
+    }
+
+    &:active {
+      background: #005F87;
+    }
+
+    &:focus {
+      background: transparent;
+      color: #005F87;
+    }
+  }
+
+  /* Disabled state */
+  .disabled-button {
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0.3);
+    background: transparent;
+    border: none !important;
+    box-shadow: none !important;
+    cursor: not-allowed;
+    outline: none !important;
+  }
+
+  /* Ensure no border/shadow on disabled focus or active */
+  .disabled-button:focus,
+  .disabled-button:active {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+/* ========================================
+   READ-ONLY ACCORDION
+   Non-interactive, always expanded
+   ======================================== */
+.mbo-accordion-style {
+  
+  .widget-accordion-group {
+    border-bottom: none;
+    background: #fff;
+
+    .widget-accordion-group-content-wrapper {
+      padding: 0;
+      background: #fff;
+    }
+
+    .widget-accordion-group-header {
+      display: flex;
+      width: 100%;
+      padding: 4px 8px 4px 32px;
+      align-items: flex-start;
+      gap: 8px;
+      border-radius: 2px;
+      background: #F0F0F0;
+      
+      /* Non-clickable header */
+      cursor: default !important;
+      pointer-events: none !important;
+
+      h3 {
+        margin: 0;
+        padding: 0;
+        color: #1E1E1E;
+        font-family: "Segoe UI";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 16px;
+      }
+
+      .widget-accordion-group-header-button {
+        background: transparent !important;
+        cursor: default !important;
+        pointer-events: none !important;
+        padding: 4px 0;
+        
+        display: flex;
+        align-items: flex-start;
+        flex: 1 0 0;
+        
+        /* No interactive styles */
+        &:hover,
+        &:focus,
+        &:active {
+          background: transparent !important;
+          cursor: default !important;
+          outline: none !important;
+          box-shadow: none !important;
+        }
+        
+        /* Hide expand/collapse icon */
+        &::before,
+        &::after {
+          display: none !important;
+        }
+      }
+    }
+    
+    /* No hover effect on read-only header */
+    .widget-accordion-group-header:hover {
+      background: #F0F0F0 !important;
+      cursor: default !important;
+    }
+  }
+  
+  /* Always visible content - cannot be collapsed */
+  .widget-accordion-group-content-wrapper {
+    display: flex !important;
+    opacity: 1 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+/* ========================================
+   DYNAMIC HEIGHT - groupBox2 & groupBox3
+   Adjusts to viewport with scroll on overflow
+   ======================================== */
+.mx-name-groupBox2,
+.mx-name-groupBox3 {
+    height: auto !important;
+    max-height: calc(100vh - 800px) !important;
+    min-height: 400px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Body scrolls when content overflows */
+.mx-name-groupBox2 .mx-groupbox-body,
+.mx-name-groupBox3 .mx-groupbox-body {
+    flex: 1 !important;
+    overflow-y: hidden !important;
+    min-height: 0 !important;
+}
+
+.mx-name-groupBox_Team,
+.mx-name-groupBox_Emp {
+    max-height: 260px !important;
+    min-height: 260px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Body scrolls when content overflows */
+.mx-name-groupBox_Team .mx-groupbox-body,
+.mx-name-groupBox_Emp .mx-groupbox-body {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    min-height: 0 !important;
+}
+
+// Override for Employee gallery empty state specifically
+.mx-name-groupBox_Emp ,
+.mx-name-groupBox_Team {
+    .widget-gallery-empty {
+        min-height: 50px !important;
+    }
+
+    .empty-placeholder {
+        padding: 0 !important;
+
+        > div {
+            // Override inline height/width/gap/padding
+            height: auto !important;
+            width: 100% !important;
+            gap: 4px !important;
+            padding: 8px !important;
+            min-height: 40px !important;
+
+            > div {
+                // Override mx-name-Instruction5 inline styles
+                width: 100% !important;
+                height: auto !important;
+                padding: 0 !important;
+            }
+        }
+    }
+}
+
+/* ========================================
+   WORK AREA ASSIGNMENT
+   ======================================== */
+.workarea-assignment {
+  // ONLY scroll container - the outermost one
+  &.mx-dataview .mx-dataview-content {
+    height: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  // Kill ALL inner Mendix scroll containers
+  .mx-scrollcontainer,
+  .mx-scrollcontainer-horizontal,
+  .mx-scrollcontainer-fixed,
+  .mx-scrollcontainer-center,
+  .mx-scrollcontainer-wrapper {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  // Fields bar stays fixed height
+  .ux-fields-bar {
+    flex-shrink: 0 !important;
+  }
+
+  // Datagrid - no scroll, just grow naturally
+  .mx-name-WorkAreaAssignmentGrid {
+    overflow: visible !important;
+  }
+
+  .widget-datagrid-content.infinite-loading {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  .widget-datagrid-content.infinite-loading {
+    overflow: visible !important;   // no scroll on grid itself
+    max-height: none !important;    // remove any height cap
+  }
+
+  .widget-accordion-group-content-wrapper,
+  .widget-accordion-group-content {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .Action-Footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    padding-bottom: 8px;
+
+    // Submit button disabled state
+    .btn-action.disabled-button {
+        pointer-events: none !important;
+        cursor: not-allowed !important;
+        background: rgba(0, 0, 0, 0.15) !important;
+        border: 1px solid rgba(0, 0, 0, 0.15) !important;
+        color: rgba(0, 0, 0, 0.3) !important;
+        box-shadow: none !important;
+
+        // Explicitly override btn-primary since both classes exist simultaneously
+        &.btn-primary {
+            background: rgba(0, 0, 0, 0.15) !important;
+            border-color: rgba(0, 0, 0, 0.15) !important;
+            color: rgba(0, 0, 0, 0.3) !important;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: rgba(0, 0, 0, 0.15) !important;
+            border-color: rgba(0, 0, 0, 0.15) !important;
+            color: rgba(0, 0, 0, 0.3) !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    }
+
+    // Submit button active/enabled state
+    .btn-action.btn-primary:not(.disabled-button) {
+        background: #005F87 !important;
+        border-color: #003750 !important;
+        color: #FFFFFF !important;
+        cursor: pointer !important;
+
+        &:hover {
+            background: #004A6B !important;
+        }
+
+        &:active {
+            background: #003750 !important;
+        }
+    }
+  }
+
+  .Action-Buttons{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 16px;
+    max-height: 5vh ;
+    position: absolute;
+    bottom:8px;
+    right:16px;
+    button{
+        height: 40px;
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 98px;
+    }
+    .col{
+        padding-left: 0px !important;
+    }
+    .col-auto{
+        padding-right: 0px !important;
+    }
+  }
+  
+
+  .input-label {
+    color: #1E1E1E;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+  }
+
+  .mx-name-TeamGrid .widget-datagrid-content.infinite-loading,
+  .mx-name-EmployeeGrid .widget-datagrid-content.infinite-loading {
+      overflow-y: auto;
+      margin-bottom: 0px !important;
+  }
+
+  /* Filter/search bar at the top */
+  .ux-fields-bar {
+      padding: 8px;
+      padding-bottom: 20px;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+      background-color: #F0F0F0;
+
+      .mx-layoutgrid {
+        padding: 10px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        
+        .mx-button img {
+          margin-top: -6px;
+        }
+
+        .row {
+          flex: auto;
+          margin-left: 8px;
+          margin-right: 8px;
+
+          &:has(.divider) {
+            flex: 1 1 1px;
+          }
+
+          .col {
+            padding: 0;
+
+            .form-group {
+              margin-bottom: 0;
+
+              &.no-columns {
+                padding: 0;
+                margin: 0;
+              }
+            }
+
+            &:has(.mx-button) {
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              padding: 0;
+              gap: 8px;
+            }
+          }
+
+          &:nth-child(1) {
+            flex: 1 1 20%;          
+          }
+
+          &:nth-child(2) {
+            flex: 1 1 20%;
+          }
+
+          &:nth-child(3) {
+            flex: 1 1 10%;
+          }
+
+          &:nth-child(4) {
+            flex: 1 1 10%;
+          }
+
+          &:nth-child(5) {
+            flex: 1 1 1%;
+          }
+
+          &:nth-child(6) {
+            flex: 1 1 38%;
+          }
+        }
+
+        .divider {
+          width: 1px;
+          height: 48px;
+          border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+
+  .ux-segmented-buttons {
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 0;
+    row-gap: 0;
+
+    .btn,
+    .mx-button {
+      box-sizing: border-box;
+      padding: 8px;
+      max-height: 90px;
+      font: normal normal var(--font-weight-segmented-buttons) var(--font-size-default)/var(--line-height-default) Segoe UI;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+
+      &:focus {
+        outline: none !important;
+      }
+
+      &:first-child {
+        border-radius: 4px 0 0 4px;
+      }
+
+      &:last-child {
+        border-radius: 0 4px 4px 0;
+      }
+    }
+
+    .btn-default {
+      color: #1e1e1e;
+
+      &:hover {
+        background: #daecf0;
+      }
+
+      &:active {
+        background: #EEF6F8;
+      }
+
+      &:focus {
+        background: #005f87;
+        color: #ffffff;
+      }
+    }
+
+    .selected-buttons {
+      background: #005f87;
+      color: #ffffff;
+
+      &:hover {
+        background: #005f87;
+      }
+    }
+
+    .disabled-buttons {
+      pointer-events: none;
+      background: rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .ux-segmented-buttons-bar {
+    padding-top: 8px;
+    padding-bottom:8px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    background-color: #F0F0F0;
+  }
+
+  /* Data table */
+ .ux-table {
+  .table {
+    overflow: hidden !important;
+
+    .tr {
+      &:nth-child(odd) > .td {
+        background: #ffffff 0% 0% no-repeat padding-box;
+        opacity: 1;
+      }
+
+      &:nth-child(even) > .td {
+        background: #ffffff 0% 0% no-repeat padding-box;
+        opacity: 1;
+      }
+
+      .th {
+        min-height: 40px !important;
+      }
+
+      .td {
+        height: 40px !important;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        padding: 4px 8px 4px 16px;
+        align-items: center;
+        align-self: stretch;
+      }
+    }
+  }
+
+  // Centering overrides — must come AFTER .table block
+  .td.align-column-center {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 4px !important;
+  }
+
+  .td.align-column-center .td-custom-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .td.align-column-center .mx-checkbox {
+    float: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+  /* Search / filter bar */
+  .ux-search,
+  .filter-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    div:first-child {
+      width: 100%;
+      height: 32px;
+      margin: 0;
+    }
+
+    .no-columns {
+      flex-direction: row !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    input {
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 1px solid #8c8c8c;
+      border-radius: 2px;
+      opacity: 1;
+      height: 36px;
+      padding: 8px 12px 8px 8px;
+
+      text-align: left;
+      font: normal normal normal var(--font-size-search)/var(--line-height-search) Segoe UI;
+      letter-spacing: 0;
+      color: #000000;
+
+      &::placeholder {
+        text-align: left;
+        font: italic normal normal var(--font-size-default)/var(--line-height-default) Segoe UI;
+        letter-spacing: 0;
+        color: #6e6e6e;
+        opacity: 1;
+      }
+
+      &:hover        { border: 2px solid #828282; }
+      &:active:focus { border: 2px solid #3296b9; }
+
+      /* Disabled input */
+      &.disabled {
+        background-color: #0000001a;
+        border: 1px solid #0000004d;
+      }
+    }
+
+    /* Two-column layout: input + icon button */
+    &:has(div:nth-of-type(2)) {
+      div:first-child {
+        width: 90%;
+        height: 36px;
+        margin-bottom: 0;
+      }
+
+      div:last-child {
+        width: 10%;
+        height: 36px;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+
+        img {
+          height: 24px;
+          width: 24px;
+          margin: 0 8px;
+          filter: invert(17%) sepia(11%) saturate(7128%) hue-rotate(166deg) brightness(96%) contrast(103%);
+        }
+      }
+    }
+  }
+
+  /* ========================================
+     ASSIGN WORKAREA GALLERY
+     Flex wrap layout, overrides default grid
+     ======================================== */
+  .assign-workarea {
+    width: 100% !important;
+
+    .widget-gallery-content {
+      display: block !important;
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    /* Override default gallery grid with flex wrap */
+    &.widget-gallery .widget-gallery-items,
+    &.widget-gallery .widget-gallery-items.widget-gallery-lg-1,
+    .widget-gallery-items,
+    .widget-gallery-items.widget-gallery-lg-1 {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+      align-items: flex-start !important;
+      align-content: flex-start !important;
+      justify-content: flex-start !important;
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      grid-template-columns: unset !important;
+    }
+
+    .widget-gallery-item {
+      width: auto !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      flex: 0 0 auto !important;
+    }
+    
+    /* Empty state placeholder */
+    .widget-gallery-empty {
+      width: 100% !important;
+      flex: 1 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: 150px;
+    }
+
+    /* ========================================
+       CARD TILE
+       ======================================== */
+    .card-group {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      background-color: #ffffff;
+      padding: 16px;
+      gap: 8px;
+
+      width: 230px;
+      height: 56px;
+      max-width: 328px;
+      max-height: 56px;
+
+      border-radius: 3px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      background: #FFF;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.30);
+
+      user-select: none;
+      cursor: pointer;
+      vertical-align: top;
+
+      & > * {
+        margin: 0;
+      }
+
+      /* Hover - only when not selected or disabled */
+      &:hover:not(.selected-card):not(.disabled-card) {
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+        border-color: #5a79c8;
+      }
+
+      /* Focus - only when not selected or disabled */
+      &:focus-within:not(.selected-card):not(.disabled-card) {
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        border: 2px solid #0F789B;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3) !important;
+      }
+
+      /* Remove button (top-right corner) */
+      .card-remove-btn {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        z-index: 10;
+        background: none;
+        border: none;
+        padding: 2px;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        transition: background 0.2s ease;
+
+        img {
+          width: 16px;
+          height: 16px;
+          display: block;
+          object-fit: contain;
+        }
+
+        &:hover,
+        &:focus {
+          background: #daecf0;
+          outline: none;
+        }
+      }
+
+      /* Card icon */
+      .card-image {
+        position: static;
+        margin: 0;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        border: none;
+        border-radius: 0;
+
+        img, svg {
+          width: 24px;
+          height: 24px;
+          display: block;
+          object-fit: contain;
+        }
+      }
+
+      /* Tile title wrapper - ensure proper overflow handling */
+      .tile-title {
+        flex: 1 1 0;
+        min-width: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        margin: 0;
+        padding: 0 !important;
+        padding-right: 24px !important; /* Space for remove button */
+        
+        /* Single line with ellipsis */
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        text-align: left !important;
+      }
+
+      /* Card label */
+      .card-label-text {
+        display: block;
+        max-width: 100%;
+        
+        /* Single line with ellipsis */
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        
+        text-align: left !important;
+        
+        color: #1E1E1E;
+        font-family: "Segoe UI";
+        font-size: 17.28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 23px;
+      }
+    }
+
+    /* Selected card */
+    .card-group.selected-card {
+      background: #EEF6F8 !important;
+      background-color: #EEF6F8 !important;
+      border: 1px solid rgba(0, 0, 0, 0.15) !important;
+
+      &:hover {
+        background: #daecf0 !important;
+        background-color: #daecf0 !important;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+      }
+
+      &:focus-within {
+        background: #EEF6F8 !important;
+        background-color: #EEF6F8 !important;
+        border: 2px solid #0F789B !important;
+        border-radius: 3px !important;
+      }
+    }
+
+    /* Default card */
+    .card-group.card-default {
+      background-color: white;
+      background: white;
+
+      .card-image {
+        margin-top: 0;
+      }
+    }
+
+    /* Disabled card */
+    .card-group.disabled-card {
+      pointer-events: none !important;
+      cursor: not-allowed !important;
+      background-color: rgba(0, 0, 0, 0.05) !important;
+      border: 1px solid rgba(0, 0, 0, 0.15) !important;
+      box-shadow: none !important;
+
+      /* Disabled text */
+      .card-label-text,
+      .mx-text,
+      span {
+        color: rgba(0, 0, 0, 0.3) !important;
+      }
+
+      /* Dimmed icon */
+      .card-image img,
+      .card-image svg {
+        opacity: 0.3 !important;
+        filter: grayscale(100%) !important;
+      }
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.05) !important;
+        border-color: rgba(0, 0, 0, 0.15) !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+
+  /* ========================================
+     EMPTY PLACEHOLDER
+     Centered content for empty states
+     ======================================== */
+  .empty-placeholder {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    > div {
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      min-height: 120px !important;
+      padding: 30px 24px !important;
+
+      /* Icon row */
+      > div:first-child {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        float: none !important;
+        margin: 0 auto !important;
+
+        .mx-image-viewer,
+        img {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+          margin: 0 auto !important;
+          float: none !important;
+        }
+      }
+
+      /* Text row */
+      > div:last-child {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+
+        h3, span, p {
+          text-align: center !important;
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  /* Smaller empty placeholder inside table cells */
+  .td > .empty-placeholder {
+    min-height: 150px !important;
+  }
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.stepper.Stepper" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Stepper</name>
+    <description>My widget description</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <property key="sampleText" type="string" required="false">
+                <caption>Default value</caption>
+                <description>Sample text input</description>
+            </property>
+            <property key="dataList" type="datasource" isList="true" required="true">
+	            <caption>Data source</caption>
+	            <description />
+            </property>
+            <property key="listName" type="attribute" required="true" dataSource="dataList">
+	            <caption>Name</caption>
+	            <description>attribute using a datasource</description>
+                <attributeTypes>
+		            <attributeType name="String"/>
+	            </attributeTypes>
+            </property>
+            <property key="taskListExecutionMode" type="attribute" required="true" dataSource="dataList">
+	            <caption>TaskList Execution Mode</caption>
+	            <description>attribute using a datasource</description>
+                <attributeTypes>
+		            <attributeType name="String"/>
+	            </attributeTypes>
+            </property>
+            <property key="statusType" type="attribute" required="true" dataSource="dataList">
+	            <caption>Status</caption>
+	            <description>attribute using a datasource</description>
+                <attributeTypes>
+		            <attributeType name="String"/>
+	            </attributeTypes>
+            </property>
+            <property key="minIterations" type="attribute" required="true" dataSource="dataList">
+	            <caption>Min Iterations</caption>
+	            <description>attribute using a datasource</description>
+                <attributeTypes>
+		            <attributeType name="String"/>
+	            </attributeTypes>
+            </property>
+            <property key="progressAction" type="action" dataSource="dataList">
+	            <caption>On Button Press</caption>
+	            <description>Action to be performed when the next or back button is pressed</description>
+            </property>
+            <property key="currentItem" type="attribute">
+	            <caption>Current Item Selected</caption>
+	            <description>Current Item</description>
+	            <attributeTypes>
+		            <attributeType name="Integer"/>
+	            </attributeTypes>
+            </property>
+            <property key="stepperButtonClickAction" type="action" dataSource="dataList">
+	            <caption>On Stepper Button Click</caption>
+	            <description>Action to be performed when stepper button is clicked</description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>

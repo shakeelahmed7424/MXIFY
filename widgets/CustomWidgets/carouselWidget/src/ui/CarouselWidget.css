@@ -1,0 +1,124 @@
+/*
+Place your custom CSS here
+*/
+.widget-carousel {
+    .carousel-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: calc(100vw - 40px);
+        margin: 20px auto;
+        box-sizing: border-box;
+        overflow: visible;
+    }
+
+    .carousel-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 0;
+        overflow: visible;
+    }
+
+    .carousel-track {
+        display: flex;
+        gap: 8px;
+        overflow: visible;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 0 1 auto;
+        min-width: 0;
+        padding: 2px;
+    }
+
+    .carousel-track.center {
+        justify-content: center;
+    }
+
+    .carousel-item {
+        width: 80px;
+        /* Updated thumbnail width */
+        height: 80px;
+        /* Updated thumbnail height */
+        border: 1px solid #ccc;
+        text-align: center;
+        padding: 8px;
+        background: #fff;
+        border-radius: 4px;
+        flex-shrink: 0;
+        /* Prevent shrinking */
+        cursor: pointer;
+    }
+
+    .carousel-item.active {
+        background-color: #d9f0ff;
+        border: 2px solid #0078d4;
+        color: #0078d4;
+    }
+
+    .item-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .item-title {
+        font-family: 'Segoe UI', sans-serif;
+        font-weight: 600;
+        font-size: 10px;
+        color: #1E1E1E;
+        margin-top: 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .arrow {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 0;
+        width: 40px;
+        min-width: 40px;
+        height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+
+    .carousel-inner .arrow.left {
+        margin-right: 10px;
+        margin-left: 0;
+    }
+
+    .carousel-inner .arrow.right {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .carousel-track {
+        z-index: 1;
+    }
+
+    .arrow img {
+        width: 24px;
+        height: 24px;
+        filter: brightness(0);
+    }
+
+    .arrow:disabled {
+        color: #aaa;
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    .arrow:disabled img {
+        filter: brightness(0) opacity(0.5);
+    }
+}

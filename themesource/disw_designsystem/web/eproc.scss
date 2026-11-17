@@ -1,0 +1,1424 @@
+.EProcedure {
+  /* --- CSS Variables for common values --- */
+  --color-white: #FFFFFF;
+  --color-black-transparent-4d: #0000004D;
+  --color-black-transparent-26: #00000026;
+  --color-gray-ddd: #ddd;
+  --color-gray-464646: #464646;
+  --color-gray-1e1e1e: #1e1e1e;
+  --color-blue-focus-outline: #005F87;
+  --color-blue-focus-border: #0F789B;
+  --color-blue-hover-light: #DAECF0;
+  --color-blue-active-light: #CDE6EB;
+  --color-blue-selected: #d0e7ee;
+  --color-blue-outline-0f789b: #0f789b;
+  --color-scrollbar-thumb: #888;
+  --color-scrollbar-track: #f1f1f1;
+
+  /* Button Success States (using existing var names for consistency) */
+  --Buttons-Accent-Success-enabled-light: #0A9B00;
+  --Buttons-Accent-Success-border-light: #054A00;
+  --Buttons-Accent-Success-hover-light: #1D731C;
+  --Buttons-Accent-Success-pressed-light: #054A00;
+
+  /* Button Error States (using existing var names for consistency) */
+  --Buttons-Accent-Error-enabled-light: #DC0000;
+  --Buttons-Accent-Error-border-light: #840000;
+  --Buttons-Accent-Error-hover-light: #B00000;
+  --Buttons-Accent-Error-pressed-light: #840000;
+
+  /* Common Font Styles */
+  --font-segoe-ui-600-17-3-23: normal normal 600 17.3px / 23px Segoe UI;
+  --font-segoe-ui-normal-12-16: normal 12px / 16px Segoe UI;
+  --font-segoe-ui-600-14-4: 600 14.4px / normal Segoe UI;
+  --font-segoe-ui-400-12: 400 12px / normal Segoe UI;
+
+  /* Common Box Shadows */
+  --box-shadow-sm: 0px 1px 2px 0px var(--color-black-transparent-4d);
+  --box-shadow-md: 0px 1px 6px 0px var(--color-black-transparent-4d);
+
+  /*-----------------------------------------------------Split Pane Starts------------------------------------------------------------*/
+  .splitPane-Outer {
+    zoom: 150%;
+
+    .Pane {
+      width: 50% !important;
+      scrollbar-width: thin !important;
+    }
+
+    .Pane1 {
+      flex: 0 0 40% !important;
+    }
+
+    .Max_Min_Button {
+      float: right;
+      position: relative;
+      z-index: 100;
+    }
+
+    .clearfix {
+      clear: both;
+
+      &::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+
+    .hidepane {
+      flex: 0 0 auto !important;
+      display: none !important;
+    }
+
+    .showpane {
+      flex: 1 1 100% !important;
+      width: 100% !important;
+      display: block !important;
+    }
+
+    .left-maximized {
+      .Pane1 {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        display: block !important;
+      }
+
+      .Pane2 {
+        flex: 0 0 auto !important;
+        display: none !important;
+      }
+    }
+
+    .instructionPane {
+      flex: 0 0 40% !important;
+    }
+
+    .instructionPanelContainer {
+      top: 8px;
+      position: relative;
+    }
+
+    .taskWorkAreaPanelContainer,
+    .documentPanelContainer {
+      top: -40px;
+      position: relative;
+    }
+
+    .splitPane-Inner .Pane2 {
+      overflow: hidden;
+    }
+  }
+
+  /*-----------------------------------------------------Split Pane Ends------------------------------------------------------------*/
+
+  /* --- General Button Styles --- */
+  /* Base button styling for Pass/Fail/Submit/Reset */
+  .PassBtn,
+  .FailBtn,
+  .Eproc_Submit {
+    height: 40px;
+    font: var(--font-segoe-ui-600-17-3-23);
+    color: var(--color-white);
+    box-shadow: var(--box-shadow-sm);
+  }
+
+  .Eproc_Reset {
+    height: 40px;
+    font: var(--font-segoe-ui-600-17-3-23);
+    box-shadow: var(--box-shadow-sm);
+  }
+
+  /* Pass Button Specifics */
+  .PassBtn {
+    width: 98px;
+    background: var(--Buttons-Accent-Success-enabled-light);
+    border: 1px solid var(--Buttons-Accent-Success-border-light);
+
+    &:hover {
+      background: var(--Buttons-Accent-Success-hover-light);
+      border-color: var(--Buttons-Accent-Success-border-light);
+      box-shadow: var(--box-shadow-md);
+    }
+
+    &:active {
+      background: var(--Buttons-Accent-Success-pressed-light);
+      border-color: var(--Buttons-Accent-Success-border-light);
+      box-shadow: var(--box-shadow-sm);
+    }
+
+    &:focus {
+      background: var(--Buttons-Accent-Success-enabled-light);
+      border: 1px solid var(--Buttons-Accent-Success-border-light) !important;
+      outline: 2px solid var(--color-blue-focus-outline) !important;
+      box-shadow: var(--box-shadow-sm);
+    }
+  }
+
+  /* Fail Button Specifics */
+  .FailBtn {
+    width: 98px;
+    background: var(--Buttons-Accent-Error-enabled-light);
+    border: 1px solid var(--Buttons-Accent-Error-border-light);
+
+    &:hover {
+      background: var(--Buttons-Accent-Error-hover-light);
+      border-color: var(--Buttons-Accent-Error-border-light);
+      box-shadow: var(--box-shadow-md);
+    }
+
+    &:active {
+      background: var(--Buttons-Accent-Error-pressed-light);
+      border-color: var(--Buttons-Accent-Error-pressed-light);
+      box-shadow: var(--box-shadow-sm);
+    }
+
+    &:focus {
+      background: var(--Buttons-Accent-Error-enabled-light);
+      border: 1px solid var(--Buttons-Accent-Error-border-light) !important;
+      outline: 2px solid var(--color-blue-focus-outline) !important;
+      box-shadow: var(--box-shadow-sm);
+    }
+  }
+
+  .Eproc_Submit {
+    width: 117px;
+  }
+
+  .Eproc_Reset {
+    margin-right: 8px;
+    width: 117px;
+  }
+
+  .disable-submit-btn {
+    pointer-events: none;
+    opacity: 50%;
+  }
+
+  .ComponentIssue-submit-btn {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    position: fixed;
+    bottom: 6px;
+    right: 48px;
+    margin-top: -26vh;
+    margin-right: 16px;
+  }
+
+  /* --- Checkbox Focus State --- */
+  .FocusStateEprocCheckBoxCont {
+    width: 50%;
+  }
+
+  .FocusStateEprocCheckBoxBtn {
+    margin-left: 0px !important;
+    width: 50%;
+
+    >[class*="col-sm-9"] {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      max-width: 100% !important;
+      white-space: nowrap;
+
+      label {
+        width: 50%;
+      }
+
+      input[type=checkbox] {
+        margin-left: 0px !important;
+      }
+    }
+
+    &:focus-within {
+      outline: 2px solid var(--color-blue-outline-0f789b);
+      opacity: 1;
+      max-width: fit-content;
+      width: 100%;
+      padding: 1px;
+    }
+  }
+
+  /* --- Data Collection & Warning --- */
+  .dataCollectionExpanded {
+    max-height: 35vh;
+    overflow: auto;
+  }
+
+  .disposition_details_warning {
+    zoom: 150%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -5%;
+    margin-left: -20%;
+  }
+
+  /* --- Tab Content Styling --- */
+  div.tab-content.mx-tabcontainer-content {
+
+    div.mx-name-task_instruction_container,
+    div.mx-name-tasklist_instruction_container {
+      overflow: auto;
+      min-height: 275px;
+      height: calc(100vh - 535px);
+      scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-track);
+
+      .widget-html-element {
+        margin-left: 18px;
+        margin-right: 18px;
+      }
+    }
+  }
+
+  /*-----------------------------------------------------Document Viewer Starts------------------------------------------------------------*/
+  .document-viewer-split-pane {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .document-viewer-split-pane .Pane2 {
+      overflow-x: hidden !important;
+    }
+
+    div {
+      flex: 0 1 auto; // Settings all the div's to height 100%
+    }
+
+    .widget-carousel div {
+      // Settings all the div's inside widget-carousel to specified height
+      flex: 0 0 auto;
+    }
+
+    .carousel-container
+    {
+      margin-top: 5px;
+    }
+
+    .documentViewer {
+
+      .documentViewerTab ul.nav-tabs li:first-child {
+        padding: 0;
+      }
+
+      .document-viewer-header {
+        margin: auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        height: 40px;
+      }
+
+      .document-header-border {
+        border-bottom: 1px solid var(--color-black-transparent-26);
+        margin-left: 10px;
+        margin-right: 10px;
+        clear: both;
+      }
+
+      .doc-view-title {
+        height: fit-content;
+        margin-top: 4px;
+      }
+
+      .documentViewerTab {
+        width: 100%;
+        // max-height: 45vh;
+        display: flex;
+        flex-direction: column;
+
+        .tab-content {
+          overflow-x: hidden;
+          overflow-y: hidden;
+          scrollbar-width: thin;
+        }
+      }
+
+      .documentViewTypeButtonContainer {
+        float: right;
+        margin-right: 48px;
+        top: -8px;
+        position: relative;
+        text-align: right;
+
+        button {
+          padding: 6px;
+
+          &:hover {
+            background-color: var(--color-blue-hover-light) !important;
+          }
+
+          &:focus {
+            border: 2px solid var(--color-blue-focus-outline) !important;
+          }
+
+          &:active {
+            background-color: var(--color-blue-active-light) !important;
+          }
+        }
+      }
+
+      .document-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+
+        img {
+          width: 48px;
+          height: 48px;
+        }
+      }
+
+      .documentListContainer {
+        overflow: auto;
+        height: 46vh;
+        scrollbar-width: thin;
+
+        .doc-item {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          background-color: var(--color-white);
+          border-bottom: 1px solid var(--color-gray-ddd);
+
+          /* Column padding override for doc-item children */
+          [class*="col-"] {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+          }
+
+
+          .document-details {
+            flex: 1;
+            overflow: hidden;
+            padding-right: 10px !important;
+
+            .document-name {
+              font: var(--font-segoe-ui-600-14-4);
+              color: #000000;
+              margin-bottom: 2px;
+
+              span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+              }
+            }
+
+            .document-description {
+              font: var(--font-segoe-ui-400-12);
+              color: var(--color-gray-464646);
+
+              .descriptionDiv {
+                cursor: auto;
+              }
+
+              span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+              }
+            }
+          }
+
+          .document-action {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+              padding-left: 0px;
+            }
+
+            img {
+              width: 24px;
+              height: 24px;
+            }
+          }
+
+          /* Doc Item States */
+          &:hover {
+            background-color: var(--color-blue-hover-light) !important;
+          }
+
+          &:active {
+            background-color: var(--color-blue-active-light) !important;
+          }
+
+          &:focus {
+            border: 2px solid var(--color-blue-focus-border) !important;
+          }
+
+          &.selected {
+            background-color: var(--color-blue-selected);
+          }
+        }
+      }
+
+      .widget-gallery .widget-gallery-items.widget-gallery-lg-1 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        justify-content: start;
+        gap: 8px;
+      }
+
+      /*-----------------------------------------------------Document Pre-View Starts------------------------------------------------------------*/
+      .documentPreViewContainer {
+        margin-top: 4px;
+        border: 1px solid var(--color-black-transparent-26);
+
+        .docPreviewContainer {
+          overflow: auto;
+          overflow: hidden;
+          height: 31vh;
+
+          div.widget-document-viewer {
+            border: 0;
+            border-radius: 0;
+          }
+
+          .widget-document-viewer-content {
+            scrollbar-width: thin;
+          }
+
+
+          .documentPreview {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            overflow: auto;
+
+            .docPreview-Title {
+              background-color: red;
+              width: 100%;
+              text-align: left;
+            }
+
+            ._3dViewer {
+              width: 100%;
+              height: 100%;
+            }
+
+            .documentName {
+              span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+                width: 130px;
+              }
+            }
+          }
+
+
+          .docNotSelectedText {
+            font-family: "Segoe UI";
+            font-style: italic;
+            font-size: 17.28px;
+            font-weight: 400;
+            color: #6E6E6E;
+            user-select: none;
+            margin: 0;
+          }
+
+          .docSelectedText {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+
+            font-family: "Segoe UI";
+            font-size: 14.4px;
+            font-weight: 600;
+            color: #1E1E1E;
+
+            margin: 0;
+            padding: 0;
+            z-index: 10;
+          }
+
+          .notSupportedContainer {
+            img {
+              width: 48px;
+              height: 48px;
+            }
+          }
+
+          .widget-document-viewer-controls {
+            margin-right: 5px;
+
+
+            .widget-document-viewer-pagination {
+              margin-top: -4px;
+              
+              .btn-icon-only{
+                height: 25px;
+                width: 25px;
+              }
+              
+            }
+            input[type="text"] {
+              width: 25px;
+              height: 20px;
+              margin: 5px;
+              margin-top: 7px;
+            }
+            .icon-Download {
+              font-size: x-large;
+              border: none;
+            }
+          }
+
+          .btn-open-in-new-tab {
+            top: 0px;
+          }
+
+          .btn-open-in-new-tab img {
+            font-size: x-large;
+            width: 24px;
+            height: 24px;
+          }
+
+        }
+
+        .docPreviewFooter {
+          position: fixed;
+          bottom: -16px;
+          margin-right: 10px;
+          width: -webkit-fill-available;
+        }
+
+        .carouselMinWidth {
+          width: 30%;
+        }
+
+        .carouselMedWidth {
+          width: 50%;
+        }
+
+        .carouselMaxWidth {
+          width: 100%;
+        }
+      }
+
+      /*-----------------------------------------------------Document Pre-View Ends------------------------------------------------------------*/
+
+    }
+
+    .documentPanelContainer .docPreviewContainer .documentName span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      width: 130px;
+    }
+  }
+
+  /*-----------------------------------------------------Document Viewer Ends------------------------------------------------------------*/
+
+  .ResourceDropdown .widget-customDropdown-holder {
+    z-index: 101 !important;
+  }
+
+  .LocationDropdown .widget-customDropdown-holder {
+    z-index: 100 !important;
+  }
+
+  .Max_Min_Button,
+  .top-right-action-button,
+  div.widget-document-viewer-controls-icons button {
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    box-shadow: none;
+    border: 2px solid transparent;
+    transition: border-color 0s ease;
+
+    &:focus {
+      background-color: transparent !important;
+      border: 2px solid var(--color-blue-focus-outline) !important;
+      outline: none !important;
+    }
+
+    &:hover {
+      background-color: var(--color-blue-hover-light);
+      border: 2px solid transparent;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+
+    &:active {
+      background-color: var(--color-blue-active-light) !important;
+      outline: none !important;
+      border: 0;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  div.widget-document-viewer-controls button {
+    margin: 0;
+  }
+
+  div.widget-document-viewer-controls-icons button {
+    font-size: x-large;
+  }
+
+  .docpane_min {
+    img {
+      height: 36px;
+      width: 28px;
+    }
+  }
+
+  /* ------- Topbar menu Override ------------------------------- */
+  .backButton {
+    left: 48px !important;
+  }
+
+  div.menuWrapper:has(button[class*="mx-name-menuButton"]),
+  div.menuWrapper:has(button[class*="mx-name-menuCloseButton"]) {
+    .backButton {
+      left: 96px !important;
+    }
+  }
+
+  .app-identity label {
+    margin-left: 5px !important;
+  }
+}
+
+/* --- Dialog Specific Styles (placed outside .EProcedure for broader scope if needed) --- */
+.container-hold-release-dialog {
+  width: 400px;
+  height: 464px;
+  transform: scale(1.5);
+  transform-origin: center center;
+  block-size: fit-content;
+
+  .mx-window-header {
+    height: 48px !important;
+    position: relative;
+    font: var(--font-segoe-ui-600-14-4);
+  }
+
+  .mx-textarea .mx-textarea-noresize {
+    text-align: left;
+    font: var(--font-segoe-ui-normal-12-16);
+    letter-spacing: 0px;
+    color: var(--color-gray-1e1e1e);
+    opacity: 1;
+    padding: 8px !important;
+  }
+}
+
+/* --- Task Container Styles --- */
+.task-outer-container {
+  display: flex;
+  align-items: center;
+}
+
+.task-inner-container {
+  display: inline-block;
+  align-items: center;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.container-status {
+  z-index: 1002 !important;
+}
+
+div[role='dialog']:has(.dhr_eprocedurepage) {
+  zoom: 150%;
+  width: 53.333333vw !important;
+  padding-top: 50px !important;
+  box-shadow: -8px 58px 16px rgba(0, 0, 0, 0.3019607843) !important;
+  margin-right: 12px !important;
+
+  .dhr-dataview {
+    width: 51.33333vw !important;
+  }
+}
+
+/* --- Acknowledgement Footer Styles --- */
+.Acknowledgement-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  position: fixed;
+  bottom: 16px;
+  right: 20px;
+  padding-right: 16px;
+}
+
+/* Specific positioning overrides for Acknowledgement-footer based on body states */
+body:has(.Pane2 .showpane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+  right: 386px;
+}
+
+body:has(.Pane2 .hidepane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+  right: 14px;
+}
+
+body:has(.taskworkarea-max-mode):has(.Pane2 .showpane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+  right: 639px;
+}
+
+body:has(.taskworkarea-max-mode):has(.Pane2 .hidepane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+  right: 14px;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1536px) {
+  body:has(.Pane2 .showpane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 314px !important;
+  }
+
+  body:has(.Pane2 .hidepane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 14px !important;
+  }
+
+  body:has(.taskworkarea-max-mode):has(.Pane2 .showpane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 507px !important;
+  }
+
+  body:has(.taskworkarea-max-mode):has(.Pane2 .hidepane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 14px !important;
+  }
+}
+
+//iPad Pro
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  body:has(.Pane2 .showpane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 276px !important;
+  }
+
+  body:has(.Pane2 .hidepane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 14px !important;
+  }
+
+  body:has(.taskworkarea-max-mode):has(.Pane2 .showpane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 451px !important;
+  }
+
+  body:has(.taskworkarea-max-mode):has(.Pane2 .hidepane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 14px !important;
+  }
+
+  .content-container,
+  .collect-data-content-container {
+    margin-top: 48px;
+    padding-top: 0px;
+  }
+
+  .collect-data-content-container.dataCollectionExpanded {
+    margin-top: auto;
+    padding-top: 16px;
+  }
+}
+
+//iPad Air
+@media only screen and (min-width: 820px) and (max-width: 1180px) and (orientation: landscape) {
+  body:has(.Pane2 .showpane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 236px !important;
+  }
+
+  body:has(.Pane2 .hidepane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 14px !important;
+  }
+
+  body:has(.taskworkarea-max-mode):has(.Pane2 .showpane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 236px !important;
+  }
+
+  body:has(.taskworkarea-max-mode):has(.Pane2 .hidepane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 14px !important;
+  }
+
+  .content-container,
+  .collect-data-content-container {
+    margin-top: 48px;
+    padding-top: 0px;
+  }
+
+  .collect-data-content-container.dataCollectionExpanded {
+    margin-top: auto;
+    padding-top: 16px;
+  }
+}
+
+//iPad Mini
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  body:has(.Pane2 .showpane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 200px !important;
+  }
+
+  body:has(.Pane2 .hidepane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 14px !important;
+  }
+
+  body:has(.taskworkarea-max-mode):has(.Pane2 .showpane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 339px !important;
+  }
+
+  body:has(.taskworkarea-max-mode):has(.Pane2 .hidepane):has(.document-viewer-split-pane) .Acknowledgement-footer {
+    right: 14px !important;
+  }
+
+  .content-container,
+  .collect-data-content-container {
+    margin-top: 48px;
+    padding-top: 0px;
+  }
+
+  .collect-data-content-container.dataCollectionExpanded {
+    margin-top: auto;
+    padding-top: 16px;
+  }
+}
+
+div[role='dialog']:has(.ESignature_EProcedure) {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) scale(1.5) !important;
+  transform-origin: center center !important;
+  width: 53.33333333vw !important;
+  height: 53.3333333vh !important;
+  overflow: hidden !important;
+
+  .close {
+    top: 0px !important;
+  }
+
+  .EsignDataView {
+    min-width: 51.3333333vw !important;
+    min-height: 45vh;
+  }
+
+  .custom-grid .tr .td {
+    padding-left: 10px !important;
+    padding-right: 0px !important;
+  }
+
+  .custom-grid .tr .column-header {
+    padding-left: 6px !important;
+    padding-right: 0px !important;
+  }
+
+  .table .th .column-resizer {
+    padding: 0px !important;
+  }
+
+  .custom-grid .tr .th {
+    padding-right: 0px !important;
+  }
+
+  .eprocesigcontainer {
+    position: static !important;
+    overflow: auto !important;
+    height: fit-content !important;
+    max-height: 235px;
+    width: 51.3333333vw !important;
+
+    .mx-name-materialsGrid.EsignDataGrid.custom-grid.table-hover.table-striped.widget-datagrid {
+      height: fit-content !important;
+      min-height: fit-content !important;
+      min-width: 1216px !important;
+    }
+
+    .widget-datagrid-grid.table {
+      margin-bottom: 0px !important;
+    }
+
+    .widget-datagrid-content.sticky-table-container.infinite-loading {
+      height: fit-content !important;
+      margin-bottom: 0px !important;
+      overflow-x: hidden !important;
+      overflow-y: scroll !important;
+
+      &::-webkit-scrollbar {
+        display: none !important;
+      }
+    }
+  }
+}
+
+div[role='dialog']:has(div.container_status_eprocedurepage) {
+  zoom: 150% !important;
+  padding-top: 50px !important;
+  // right: -60px !important;
+  position: fixed;
+}
+
+div.mx-esig-page.max-esig-window:has(.ESignature_EProcedure) {
+  width: 65.333333333vw !important;
+  height: 65.33333333vh !important;
+
+  .EsignDataView {
+    height: 100% !important;
+  }
+
+  .eprocesigcontainer {
+    width: 63.33333333vw !important;
+  }
+
+  .modal-body {
+    height: 59.33333333vh !important;
+  }
+}
+
+
+/* ------- Document Viewer Fullscreen Start ------------------------------- */
+
+.docViewerFullscreen {
+  opacity: 1;
+  z-index: 102;
+  top: 0px !important;
+  left: 0px !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0%;
+  max-width: 100%;
+  max-height: 100%;
+  zoom: 150%;
+
+  .modal-header {
+    display: none !important;
+  }
+}
+
+.documentPreViewContainer .docPreviewContainer .documentPreview ._3dViewer .mx-3d-viewer-container-host {
+  min-width: 270px;
+  min-height: 220px;
+  canvas[id*="navcube"]  { // Trying to modify size of 3D viewer Box control
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.docViewerFullscreen .documentPreViewContainer .docPreviewContainer .documentPreview ._3dViewer .mx-3d-viewer-container-host {
+  min-width: 700px;
+  min-height: 320px;
+  canvas[id*="navcube"] { // Trying to modify size of 3D viewer Box control
+    width: 128px;
+    height: 128px;
+  }
+}
+
+.docViewerFullscreen .docPreviewFooter {
+  bottom: -8px !important;
+}
+
+.docViewerFullscreen .docPreviewContainer {
+  height: 44vh !important;
+}
+
+/* Icon buttons */
+.docViewerFullScreen-Popup-header .mx-button {
+  background: transparent;
+  color: #FFFFFF;
+  border: none;
+  zoom: 150%;
+  box-shadow: none;
+}
+
+/* Hover */
+.docViewerFullScreen-Popup-header .mx-button:hover {
+  //background-color: #DAECF0;
+  background-color: #004D73 !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Focus */
+.docViewerFullScreen-Popup-header .mx-button:focus {
+  //outline: none;
+  //border: 2px solid #005F87;
+  border: 2px solid #C8F5FF !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.docViewerFullScreen-Popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* LEFT title, RIGHT buttons */
+  height: 54px;
+  padding: 16px 0 16px 16px;
+  color: #FFFFFF;
+  background-color: #005f87;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 8px;
+}
+
+/* Title */
+.docViewerFullScreen-Popup-header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Buttons aligned right */
+.docViewerFullScreen-Popup-header-actions {
+  display: flex;
+  align-items: center;
+  //gap: 8px;
+}
+
+/* ------- Document Viewer Fullscreen end ------------------------------- */
+
+/*---------------Change Qty pop up start----------------------------*/
+.changeQty-dialog {
+  width: 70% !important;
+  height: 80% !important;
+  left: 15% !important;
+  right: 15% !important;
+  top: 10% !important;
+  bottom: 10% !important;
+  zoom: 150%;
+  transform-origin: center center;
+  block-size: fit-content;
+
+  .mx-dataview-content {
+    scrollbar-width: thin !important;
+  }
+}
+
+.change-qty-panel {
+  li {
+    width: 100%;
+  }
+
+  // .error-icon-change-qty
+  // {
+  //   margin-top: 8px;
+  // }
+  .col-lg,
+  .col-md,
+  .col {
+    padding-right: 0px !important;
+    align-content: center;
+  }
+
+  .widget-gallery .widget-gallery-items.widget-gallery-lg-1 {
+    grid-template-columns: repeat(auto-fill, 250px);
+  }
+
+  .widget-accordion-group-content-wrapper {
+    padding-left: 0px !important;
+  }
+
+  .change-qty-value {
+    margin-bottom: 8px;
+    margin-right: 8px;
+    margin-top: 8px;
+  }
+
+  .change-qty-header {
+    align-items: center;
+  }
+
+  .widget-gallery .infinite-loading {
+    overflow: hidden !important;
+  }
+
+  .text-input-layout input {
+    text-align: center !important;
+  }
+}
+
+/*---------------Change Qty pop up end----------------------------*/
+
+
+/* ----------------------------------------------------- User Menu Starts ------------------------------------------------------------ */
+.teamTrackingMenuDataView {
+  display: block;
+  float: inline-start;
+}
+
+.userMenu {
+  zoom: var(--zoom-scaling);
+  width: 300px;
+  height: fit-content;
+  top: 62px !important;
+  right: 10px !important;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mx-dataview-content {
+    padding: 0px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modal-header {
+    display: none;
+  }
+
+  .userIcon {
+    border-radius: 50%;
+    background: #F0F0F0;
+    min-width: 35px;
+    height: 35px;
+    width: 35px;
+    margin-top: 7px;
+    padding: 5px;
+    border: none;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .userIcon:focus {
+    color: #0F789B;
+    border: 2px;
+  }
+
+  .userName {
+    font-family: var(--font-family);
+    font-size: 14.4px;
+    font-weight: 400;
+    color: #000000;
+    margin-top: 12px;
+    text-align: left;
+  }
+
+  .custom-hr {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.15);
+    /* soft grey via opacity */
+    margin: 10px 0;
+    width: 100%;
+    border: none;
+  }
+
+  .footer {
+    margin-bottom: 5px;
+
+    .logOut {
+      border: none;
+      box-shadow: none;
+      font-family: var(--font-family);
+      font-size: 12px;
+      font-weight: 400;
+      color: #1E1E1E;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 0;
+      width: fit-content;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .logOut:hover {
+      background-color: #EEF6F8;
+    }
+
+    .logOut:active {
+      background-color: #CDE6EB !important;
+      // background-color: rgba(0, 0, 0, 0.2) !important; // Active pressed
+      border-color: transparent !important;
+      outline: none !important;
+    }
+
+    .logOut:focus {
+      color: #1E1E1E;
+      border: 2px;
+    }
+  }
+}
+
+/* ----------------------------------------------------- User Menu Ends ------------------------------------------------------------ */
+
+/* ------- Computation Task------------------------------- */
+.error-message-result {
+  box-shadow: inset 0 0 0 1px #dc0000 !important;
+  //background: #fce5e5 !important;
+  background: none !important;
+  padding: 0%;
+  position: relative !important;
+}
+
+.warning-message-result {
+  box-shadow: inset 0 0 0 1px #DC6914 !important;
+  //background: #fcf0e7 !important;
+  padding: 0%;
+  position: relative !important;
+}
+
+.computation-result-icon {
+  width: 20px !important;
+  position: relative;
+  height: 19px !important;
+  z-index: 2 !important;
+  top: -42px;
+  left: 302px;
+}
+
+
+/* ------- Computation Task------------------------------- */
+
+
+/* ------- WorkAreaSignInSignOut Popup Start------------------------------- */
+
+.WorkAreaSignInSignOut-dialog {
+  height: 80% !important;
+  width: 80% !important;
+  zoom: 150%;
+  top: 10% !important;
+  left: 10% !important;
+  right: 10% !important;
+  transform-origin: center center;
+  block-size: fit-content;
+
+  .ux-policies-web { 
+    &.ux-application-content-zoom {
+      zoom: 100% !important;
+    }
+  }
+}
+
+/* ------- WorkAreaSignInSignOut Popup End------------------------------- */
+
+div.mx-window-record-production-event[role=dialog] {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) scale(1.5) !important;
+  transform-origin: center center !important;
+  width: 47.33333333vw !important;
+  height: 63.33333333vh !important;
+  overflow: hidden !important;
+
+  div.mx-dataview-content:has(div.mx-record-production-event-content) {
+    height: 51vh !important;
+  }
+
+  @media screen and (max-height: 768px) {
+    div.mx-dataview-content:has(div.mx-record-production-event-content) {
+      height: 47vh !important;
+    }
+  }
+
+  .mx-window-body {
+    overflow: hidden !important;
+    height: 63.33333333vh !important;
+  }
+
+  .mx-dataview-controls {
+    position: relative;
+    top: -6px;
+  }
+
+  .Record-Production-Failure-Header {
+    display: flex;
+    gap: 0;
+
+    .asterisk {
+      margin-top: 8px;
+    }
+  }
+
+  .Record-Production-Failure-Description-Header {
+    display: flex;
+    gap: 0;
+
+    .asterisk {
+      margin-bottom: -16px;
+      margin-top: -4px;
+    }
+  }
+
+  .widget-file-uploader {
+
+    .entry-upload-info,
+    .entry-details-preview {
+      display: none !important;
+    }
+
+    .file-entry {
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
+      margin-bottom: 0.5em !important;
+
+      .entry-details {
+        .entry-details-main {
+          flex-direction: row !important;
+          align-items: center;
+          justify-content: space-between;
+
+          .entry-details-main-size {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
+  div[role='dialog']:has(div.container_status_eprocedurepage) {
+    zoom: 120% !important;
+  }
+
+  div[role='dialog']:has(.dhr_eprocedurepage) {
+    zoom: 120% !important;
+  }
+}
+
+div[id=content]:has(div.EProcedure)~div.swal2-container {
+  zoom: 150% !important;
+  padding: 43px 24px 0 0 !important;
+}
+
+div[id=content]:has(div.EProcedure)~div.mx-dialog-error {
+  zoom: 150% !important;
+  top: 35px !important;
+  right: 60px !important;
+}
+
+.eproc-task-instructions ul.mx-tabcontainer-tabs:has(li:only-child) li.active a {
+  border-bottom: none !important;
+  display: none !important;
+}
+
+.eproc_instruction_container{
+  .instruction_container{
+    zoom: 0.6667 !important;
+  }
+  margin-left: 12px !important;
+  min-width: calc(100% + 24px);
+}
+
+.mx-page.EProcedure .ComponentIssue-DataGrid .widget-datagrid-content.sticky-table-container.infinite-loading {
+  height: auto !important;
+  margin-bottom: 0px !important;
+  overflow-y: unset !important;
+}

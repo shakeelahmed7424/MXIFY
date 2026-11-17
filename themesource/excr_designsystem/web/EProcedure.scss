@@ -1,0 +1,185 @@
+.cr-eproc-weight{
+    //Context Area
+    .ux-property-value{
+        // border: 1px solid rgba(0, 0, 0, 0.15);
+        // background: #F0F0F0 0% 0% no-repeat padding-box;
+        // box-shadow: 0px 3px 6px rgba(0, 0, 0, .3);
+
+        margin: 0px 4px;
+        padding: 32px 8px 8px 8px;
+        width: unset;
+
+        .row + .row{
+            margin-top: 0px;
+        }
+
+        .row{
+           .col:nth-of-type(1){
+               label{
+                   width: 70px;
+                   font-weight: normal;
+               }
+               span{
+                   font-weight: 600;
+               }
+           }
+
+           .col:nth-of-type(2){
+               label{
+                   width: 85px;
+                    font-weight: normal;
+               }
+               span{
+                   font-weight: 600;
+               }
+           }
+
+           .col:nth-of-type(3){
+               label{
+                   width: 90px;
+               font-weight: normal;
+               }
+               span{
+                   font-weight: 600;
+               }
+           }
+        }
+    }
+
+    //Data Area
+    .eproc-data-area{
+        margin-top: 4px;
+        margin-left: -4px;
+
+        div[class^=col] .form-group{
+            margin-bottom: 0px;
+        }
+
+        .eproc-scan-container{
+            padding: 0px 16px;
+        }
+
+        .eproc-scale-dropdown{
+            padding: 0px 16px;
+        }
+
+        .eproc-manual-override{
+            padding: 0px;
+
+            input{
+                margin: 8px 7px 8px 0px;
+            }
+        }
+
+        .eproc-scale-qtyuom{
+            padding: 0px;
+
+            div:has(span){
+                width: 50%;
+
+                font: normal normal normal var(--font-size-default)/var(--line-height-default) Segoe UI;
+                letter-spacing: 0px;
+                color: #1e1e1e;
+                opacity: 1;
+                padding: 8px;
+
+                background: #0000001a 0% 0% no-repeat padding-box;
+                border: 1px solid #0000004d;
+                border-radius: 2px;
+                opacity: 1;
+
+                span + span{
+                    float: right;
+                }
+            }
+        }
+
+        .mx-checkbox{
+            margin-top: 12px;
+        }
+
+        .eproc-scale-reset{
+            .PrefixCustomDropdown__single-value .PrefixCustomDropdown__name,
+            .PrefixCustomDropdown__clear-indicator{
+                display: none;
+            }
+        }
+    }
+
+    //Units of Measure
+    .ux-units-measure{
+        margin: 4px 4px;
+        padding: 8px 8px;
+
+        span{
+            font-size: 36px !important;
+        }
+    }
+
+    //Scale Display Area
+    .eproc-scale-area{
+        margin-top: 24px;
+        zoom: 50%;
+        padding: 0px 24px;
+
+        .current-label{
+            display: none;
+        }
+
+        .current-marker::before{
+            right: -10.5px;
+        }
+
+        .current-marker::after{
+            right: -10.5px;
+        }
+
+        .zone-yellow{
+            background-color: #ffe580;
+        }
+
+        .zone-green{
+            background-color: #99b280;
+        }
+
+        .zone-red{
+            background-color: #e58080;
+        }
+
+        .threshold-line{
+            background-color: #fecb00 !important;
+        }
+
+        .threshold-line ~ .threshold-line{
+            background-color: #cb0000 !important;
+        }
+
+        .target-line{
+            background-color: black;
+        }
+
+        .threshold-label-wrapper{
+            .threshold-label{
+                color: initial !important;
+            }
+
+            .label-title{
+                font-family: 'Segoe UI';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14.4px;
+                line-height: 19px;
+                text-align: center;
+            }
+
+            .label-value{
+                font-family: 'Segoe UI';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24.88px;
+                line-height: 33px;
+                text-align: center;
+            }
+        }
+    }
+}
